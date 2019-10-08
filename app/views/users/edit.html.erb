@@ -1,0 +1,30 @@
+ユーザー編集
+
+
+<%= form_for(@user) do |f| %>
+	<div>
+		<h5>本名</h5>
+		<%= f.text_field :user_name%>
+	</div>
+
+	<div>
+		<h5>ニックネーム</h5>
+		<%= f.text_field :nickname%>
+	</div>
+
+    <div class="field">都道府県<br>
+        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '選択して下さい' %>
+    </div>
+
+
+  <div class="field">
+    <%= f.label :sex, "性別" %><br />
+    <%= f.label :man, "男" %>
+    <%= f.radio_button :sex, :man %>
+    <%= f.label :woman,"女" %>
+    <%= f.radio_button :sex, :woman %>
+  </div>
+
+
+	<%= f.submit '確定'%>
+	<% end %>
