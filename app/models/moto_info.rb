@@ -1,0 +1,2 @@
+class MotoInfo < ApplicationRecord
+end

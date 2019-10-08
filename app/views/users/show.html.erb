@@ -1,0 +1,14 @@
+my page
+
+<div>画像<%= @user.profile_image %></div>
+<div>ニックネーム<%= @user.nickname %></div>
+<div>本名<%= @user.user_name %></div>
+<div>性別<%= @user.sex %></div>
+<div>住所<%= @user.prefecture.name %></div>
+<div>自己紹介<%= @user.user_introduction %></div>
+<div>自己紹介<%= @user.sex %></div>
+
+
+
+
+<%= button_to "ログアウト", destroy_user_session_path, method: :delete,class: "my_logout_btn" %>
