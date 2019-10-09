@@ -14,6 +14,7 @@ class MotoInfosController < ApplicationController
 
   # GET /moto_infos/new
   def new
+    @user = current_user
     @moto_info = MotoInfo.new
   end
 
@@ -24,11 +25,13 @@ class MotoInfosController < ApplicationController
   # POST /moto_infos
   # POST /moto_infos.json
   def create
+
     @moto_info = MotoInfo.new(moto_info_params)
+    @moto_info.user_id = current_user.id
 
     respond_to do |format|
       if @moto_info.save
-        format.html { redirect_to @moto_info, notice: 'Moto info was successfully created.' }
+        format.html { redirect_to user_path(current_user), notice: 'Moto info was successfully created.' }
         format.json { render :show, status: :created, location: @moto_info }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class MotoInfosController < ApplicationController
   def update
     respond_to do |format|
       if @moto_info.update(moto_info_params)
-        format.html { redirect_to @moto_info, notice: 'Moto info was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Moto info was successfully updated.' }
         format.json { render :show, status: :ok, location: @moto_info }
       else
         format.html { render :edit }

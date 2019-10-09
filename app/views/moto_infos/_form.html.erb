@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :maker_name %>
+    <%= form.label :maker_name, "メーカー" %>
     <%= form.text_field :maker_name %>
   </div>
 
   <div class="field">
-    <%= form.label :moto_name %>
+    <%= form.label :moto_name, "バイク名" %>
     <%= form.text_field :moto_name %>
   </div>
 
   <div class="field">
-    <%= form.label :volume %>
+    <%= form.label :volume, "排気量" %>
     <%= form.text_field :volume %>
   </div>
 
   <div class="field">
-    <%= form.label :is_own %>
-    <%= form.number_field :is_own %>
+    <%= form.label :is_own,"バイクをお持ちですか？" %>
+    <%= form.select :is_own, [["持っている", true], ["持っていない", false]] %>
   </div>
 
   <div class="actions">
