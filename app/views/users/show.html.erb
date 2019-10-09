@@ -1,6 +1,35 @@
 my page
 
-<div>画像<%= @user.profile_image %></div>
+<% if @user == current_user %>
+<table>
+  <thead>
+    <tr>
+      <th>Maker name</th>
+      <th>Moto name</th>
+      <th>Volume</th>
+      <th>Is own</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @moto_infos.each do |moto_info| %>
+      <tr>
+        <td><%= moto_info.maker_name %></td>
+        <td><%= moto_info.moto_name %></td>
+        <td><%= moto_info.volume %></td>
+        <td><%= moto_info.is_own ? "持っている": "持っていない"  %></td>
+
+        <td><%= link_to '編集', edit_moto_info_path(moto_info) %></td>
+        <td><%= link_to '車両を削除', moto_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div><%= attachment_image_tag @user, :profile_image, :fill, 200, 200 %></div>
 <div>ニックネーム<%= @user.nickname %></div>
 <div>本名<%= @user.user_name %></div>
 <div>性別<%= @user.sex %></div>
@@ -8,7 +37,44 @@ my page
 <div>自己紹介<%= @user.user_introduction %></div>
 <div>自己紹介<%= @user.sex %></div>
 
-
-
+<%= link_to 'edit',edit_user_path %>
 
 <%= button_to "ログアウト", destroy_user_session_path, method: :delete,class: "my_logout_btn" %>
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>Maker name</th>
+      <th>Moto name</th>
+      <th>Volume</th>
+      <th>Is own</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @moto_infos.each do |moto_info| %>
+      <tr>
+        <td><%= moto_info.maker_name %></td>
+        <td><%= moto_info.moto_name %></td>
+        <td><%= moto_info.volume %></td>
+        <td><%= moto_info.is_own ? "持っている": "持っていない"  %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div>画像<%= @user.profile_image %></div>
+<div>ニックネーム<%= @user.nickname %></div>
+<div>性別<%= @user.sex %></div>
+<div>住所<%= @user.prefecture.name %></div>
+<div>自己紹介<%= @user.user_introduction %></div>
+<div>自己紹介<%= @user.sex %></div>
+
+<%= button_to "ログアウト", destroy_user_session_path, method: :delete,class: "my_logout_btn" %>
+<% end %>
+
+

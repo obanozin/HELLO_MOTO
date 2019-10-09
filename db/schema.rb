@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_07_093549) do
+ActiveRecord::Schema.define(version: 2019_10_08_044111) do
 
   create_table "moto_infos", force: :cascade do |t|
+    t.integer "user_id"
     t.string "maker_name"
     t.string "moto_name"
     t.string "volume"
-    t.boolean "is_own", default: false, null: false
+    t.boolean "is_own"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_10_07_093549) do
     t.string "user_name", null: false
     t.integer "sex", null: false
     t.string "user_introduction"
-    t.string "profile_image"
+    t.string "profile_image_id"
     t.string "age"
     t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", null: false
