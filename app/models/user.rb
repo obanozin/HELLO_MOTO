@@ -5,6 +5,7 @@ class User < ApplicationRecord
 	attachment :profile_image
 
 	has_many :messages
+	has_many :entries
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
