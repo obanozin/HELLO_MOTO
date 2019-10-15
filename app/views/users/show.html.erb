@@ -67,6 +67,8 @@ my page
 
 <br>
 
+<%= button_to "メッセージを送る", {controller: 'rooms', action: 'create'} %>
+
 <div>画像<%= @user.profile_image %></div>
 <div>ニックネーム<%= @user.nickname %></div>
 <div>性別<%= @user.sex %></div>
