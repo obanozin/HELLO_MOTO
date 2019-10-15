@@ -7,10 +7,10 @@ class RoomsController < ApplicationController
 			redirect_to rooms_show_path(:id)
 			else
 	        @room = Room.create
-		        @entry1 = Entry.create(:room_id => @room.id,:user_id => current_user.id)
-		        @entry2 = Entry.create(:room_id => @room.id,:user_id => user.id)
-		        redirect_to "/rooms/#{@room.id}"
-        end
+	        @entry1 = Entry.create(:room_id => @room.id,:user_id => current_user.id)
+	        @entry2 = Entry.create(:room_id => @room.id,:user_id => user.id)
+	        redirect_to "/rooms/#{@room.id}"
+
     end
 
     def show
