@@ -1,0 +1,18 @@
+<div><%= @team.team_name %><div>
+<div><%= attachment_image_tag @team, :team_image, :fill, 60,  60 ,fallback: "no_image.jpg",size: '150x150' %></div>
+<div>リーダー:<%= @team.user.nickname %></div>
+<div>活動地域:<%= @team.user.prefecture.name %></div>
+<div>年齢層:<%= @team.age_range %></div>
+<div>紹介文:<%= @team.team_introduction %></div>
+
+
+
+<p>チャット</p>
+<p>ツーリング</p>
+<p>メンバー</p>
+
+<%= link_to "チーム編集", edit_team_path(@team) %>
+
+<%= link_to 'Back', teams_path %>
+
+<%= link_to "delete", team_path(@team.id), method: :delete, "data-confirm" => "本当に消しますか？消去したチームデータは元に戻せません。" %>

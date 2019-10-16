@@ -1,0 +1,28 @@
+<h1>チーム編集</h1>
+
+
+<%= form_for(@team) do |f| %>
+    <div>
+        <%= f.attachment_field :team_image %>
+    </div>
+
+    <div>
+    	<h5>チーム名</h5>
+    	<%= f.text_field :team_introduction %>
+    </div>
+    <div>
+		<h5>チーム紹介</h5>
+		<%= f.text_area :team_introduction %>
+	</div>
+	<div>
+		<h5>年齢層</h5>
+		<%= f.text_area :age_range %>
+	</div>
+
+
+
+    <%= f.submit %>
+    <% end %>
+
+<%= link_to 'Show', @team %> |
+<%= link_to 'Back', teams_path %>

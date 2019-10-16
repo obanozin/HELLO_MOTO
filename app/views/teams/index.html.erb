@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>チーム一覧</h1>
+
+  <tbody>
+    <% @teams.each do |team| %>
+
+    <div>
+      <p>チーム名 : <%= link_to team.team_name, team_path(team.id) %></p>
+      <p>リーダー : <%= team.user.nickname %></p>
+      <p>活動地域 : <%= team.user.prefecture.name %></p>
+      <p>チーム紹介 : <%= team.team_introduction %></p>
+    </div>
+    <% end %>
