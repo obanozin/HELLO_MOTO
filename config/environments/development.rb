@@ -8,7 +8,8 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-
+  config.cache_classes = false
+  config.reload_classes_only_on_change = false
   # Show full error reports.
   config.consider_all_requests_local = true
 

@@ -1,0 +1,23 @@
+<h1>New Team Member</h1>
+
+
+<%= form_for(@team_member) do |f| %>
+
+
+
+<%= @aaa.inspect %>
+	<h4>参加申請ページ</h4>
+	<div>
+		<%= f.hidden_field :user_id, :value => @user.id %>
+	</div>
+	<div>
+		<%= f.hidden_field :team_id, :value => @team.id %>
+	</div>
+    <div>
+		<%= f.text_field :request_comment %>
+	</div>
+	<br><%= f.submit '申請を送る' %></br>
+
+	<% end %>
+
+<%= link_to 'Back', team_members_path %>

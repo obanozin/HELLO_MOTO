@@ -1,3 +1,6 @@
+
+
+
 <div><%= @team.team_name %><div>
 <div><%= attachment_image_tag @team, :team_image, :fill, 60,  60 ,fallback: "no_image.jpg",size: '150x150' %></div>
 <div>リーダー:<%= @team.user.nickname %></div>
@@ -10,6 +13,7 @@
 <p>チャット</p>
 <p>ツーリング</p>
 <p>メンバー</p>
+<%= link_to "参加申請", new_team_member_path(@team,user: current_user.id) %>
 
 <%= link_to "チーム編集", edit_team_path(@team) %>
 
