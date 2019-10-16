@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  resources :team_members
   resources :rooms ,only:[:show]
   post "/room/create/:user_id" => "rooms#create" ,as:'room_create'
   resources :teams
