@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_10_16_050159) do
 
+
   create_table "entries", force: :cascade do |t|
     t.integer "user_id"
     t.integer "room_id"
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_10_16_050159) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 
   create_table "teams", force: :cascade do |t|
     t.integer "user_id"
