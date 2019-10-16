@@ -21,6 +21,7 @@ class TeamsController < ApplicationController
 
   # GET /teams/1/edit
   def edit
+    @team = Team.find(params[:id])
   end
 
   # POST /teams
@@ -35,29 +36,22 @@ class TeamsController < ApplicationController
   # PATCH/PUT /teams/1
   # PATCH/PUT /teams/1.json
   def update
-    respond_to do |format|
-      if @team.update(team_params)
-        format.html { redirect_to @team, notice: 'Team was successfully updated.' }
-        format.json { render :show, status: :ok, location: @team }
-      else
-        format.html { render :edit }
-        format.json { render json: @team.errors, status: :unprocessable_entity }
-      end
-    end
+    @team = Team.find(params[:id])
+    @team.update(team_params)
+    redirect_to @team
   end
 
   # DELETE /teams/1
   # DELETE /teams/1.json
   def destroy
+    @team = Team.find(params[:id])
     @team.destroy
-    respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to teams_path
   end
+
 
   private
   def team_params
-    params.require(:team).permit(:team_name, :user_id,:team_introduction,:region)
+    params.require(:team).permit(:team_name, :user_id,:team_introduction,:team_image,:age_range)
   end
 end
