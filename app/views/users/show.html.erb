@@ -67,7 +67,8 @@ my page
 
 <br>
 
-<%= button_to "メッセージを送る", {controller: 'rooms', action: 'create'} %>
+<%= button_to "メッセージを送る", {controller: 'rooms', action: 'create',user_id:@user.id} %>
+<%= link_to "メッセージを送る", room_create_path(@user.id), method:'POST' %>
 
 <div>画像<%= @user.profile_image %></div>
 <div>ニックネーム<%= @user.nickname %></div>
