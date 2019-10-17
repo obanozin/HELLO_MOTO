@@ -4,11 +4,13 @@ class TeamMembersController < ApplicationController
   # GET /team_members
   # GET /team_members.json
   def index
-    @team_members = TeamMember.all
+    @team_member = TeamMember.all
   end
 
-  # GET /team_members/1
-  # GET /team_members/1.json
+  def request
+    @team_member = TeamMember.all
+  end
+
   def show
   end
 
@@ -31,7 +33,7 @@ class TeamMembersController < ApplicationController
     @team_member.user_id = current_user.id
     @team = Team.find(params[:team_member][:team_id])
     @team_member.save
-    binding.pry
+    redirect_to users_path(current_user)
 
 
 
