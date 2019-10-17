@@ -6,7 +6,7 @@ class User < ApplicationRecord
 	has_many :messages
 	has_many :entries
 	has_many :teams
-	has_many :team_member
+	has_many :team_members
 
 
   # Include default devise modules. Others available are:
@@ -16,7 +16,4 @@ class User < ApplicationRecord
 
 
           enum sex: { man: 1, woman: 2, other: 3}
-
-
-   
 end

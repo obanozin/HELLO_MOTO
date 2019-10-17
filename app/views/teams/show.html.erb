@@ -13,7 +13,7 @@
 <p>チャット</p>
 <p>ツーリング</p>
 <p>メンバー</p>
-<%= link_to "参加申請", new_team_member_path(@team,user: current_user.id) %>
+<%= link_to "参加申請", new_team_team_member_path(@team.id) %>
 
 <%= link_to "チーム編集", edit_team_path(@team) %>
 

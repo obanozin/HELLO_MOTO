@@ -16,9 +16,8 @@ class TeamMembersController < ApplicationController
 
   # GET /team_members/new
   def new
-    @aaa = params
-    @user = User.find(params[:user])
-    @team = Team.find(params[:format])
+    @user = current_user
+    @team = Team.find(params[:team_id])
     @team_member = TeamMember.new
   end
 
@@ -33,10 +32,7 @@ class TeamMembersController < ApplicationController
     @team_member.user_id = current_user.id
     @team = Team.find(params[:team_member][:team_id])
     @team_member.save
-    redirect_to users_path(current_user)
-
-
-
+    redirect_to users_path
   end
 
   # PATCH/PUT /team_members/1
