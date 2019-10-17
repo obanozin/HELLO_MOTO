@@ -7,9 +7,7 @@ class TeamMembersController < ApplicationController
     @team_member = TeamMember.all
   end
 
-  def request
-    @team_member = TeamMember.all
-  end
+
 
   def show
   end
