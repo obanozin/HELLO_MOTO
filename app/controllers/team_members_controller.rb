@@ -5,13 +5,17 @@ class TeamMembersController < ApplicationController
   # GET /team_members.json
   def index
     @team = Team.find(params[:team_id])
-    @team_members = @team.team_members.hold
+    @team_members = @team.team_members.approval
 
 
   end
   def show
   end
 
+  def people
+    @team = Team.find(params[:team_id])
+    @team_members = @team.team_members.hold
+  end
   # GET /team_members/new
   def new
     @user = User.find(current_user.id)

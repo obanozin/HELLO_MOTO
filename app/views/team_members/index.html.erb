@@ -1,25 +1,21 @@
-
-
-<h1>申請一覧</h1>
+<h1>メンバー一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>申請者</th>
-      <th>申請コメント</th>
+      <th>メンバー</th>
     </tr>
 
   </thead>
 
   <tbody>
+    <tr>
+      <td><%= @team.user.nickname %></td>
+    </tr>
     <% @team_members.each do |team_member| %>
       <tr>
         <td><%= team_member.user.nickname %></td>
-        <td><%= team_member.request_comment %></td>
-        <td><%= link_to "承認", team_team_member_path(@team, team_member), method: :patch  %></td>
-        <td><%= link_to "削除", team_team_member_path(@team, team_member), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
