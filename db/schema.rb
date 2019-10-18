@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 2019_10_16_070236) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
   create_table "team_members", force: :cascade do |t|
     t.integer "team_id"
     t.integer "user_id"
