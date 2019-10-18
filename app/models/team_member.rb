@@ -1,6 +1,7 @@
 class TeamMember < ApplicationRecord
 
-	enum team_member: { hold: 0, approval:1, bye:2}
+	enum is_team: { hold: 0, approval:1, bye:2}
 	belongs_to :team
 	belongs_to :user
+	validates_uniqueness_of :user_id, scope: [:team_id]
 end

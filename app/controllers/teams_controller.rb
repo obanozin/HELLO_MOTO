@@ -38,7 +38,7 @@ class TeamsController < ApplicationController
   def update
     @team = Team.find(params[:id])
     @team.update(team_params)
-    redirect_to @team
+    redirect_to team_path(@team)
   end
 
   # DELETE /teams/1

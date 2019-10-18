@@ -13,10 +13,15 @@
 <p>チャット</p>
 <p>ツーリング</p>
 <p>メンバー</p>
-<%= link_to "参加申請", new_team_member_path(@team,user: current_user.id) %>
+<%= link_to "メンバー一覧", team_team_members_path(@team.id) %>
+<%= link_to "参加申請", new_team_team_member_path(@team.id) %>
+<%= link_to "メンバー一覧", team_team_members_path(@team.id) %>
+<%= link_to "申請一覧", team_people_path(@team.id) %>
+
 
 <%= link_to "チーム編集", edit_team_path(@team) %>
 
 <%= link_to 'Back', teams_path %>
 
 <%= link_to "delete", team_path(@team.id), method: :delete, "data-confirm" => "本当に消しますか？消去したチームデータは元に戻せません。" %>
+
