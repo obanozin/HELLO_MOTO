@@ -1,0 +1,24 @@
+
+
+<h1>ツーリング</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tourings.each do |touring| %>
+      <tr>
+        <td><%= touring.touring_name  %></td>
+        <td><%= link_to "詳細", team_touring_path(@team,touring.id) %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

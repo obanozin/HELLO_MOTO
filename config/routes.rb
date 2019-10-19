@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  resources :tourings
 	devise_for :users
 
 	resources :teams do
-		resources :team_members 
+		resources :team_members, :tourings
 		get 'people' => 'team_members#people', as: 'people'
 
 		# get 'teams/:team_id/team_members/:id/people' => 'team_members#people'

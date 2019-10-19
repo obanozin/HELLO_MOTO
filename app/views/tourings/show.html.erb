@@ -1,0 +1,19 @@
+<%= attachment_image_tag @tourings, :touring_image, :fill, 60,  60 ,fallback: "no_image.jpg",size: '150x150' %><br>
+<p><%= @tourings.touring_name %></p><br>
+<p><%= @tourings.team.team_name %></p><br>
+<p>行き先:<%= @tourings.destination %></p><br>
+<p>日にち:<%= @tourings.touring_date %></p><br>
+<p>詳細:<%= @tourings.touring_detail %></p><br>
+<p>責任者:<%= @tourings.user.user_name %></p><br>
+
+
+
+
+<p>メンバー一覧</p>
+
+
+
+
+
+
+<%= link_to 'Back', tourings_path(@team) %>
