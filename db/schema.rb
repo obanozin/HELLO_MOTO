@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_16_070236) do
-
+ActiveRecord::Schema.define(version: 2019_10_18_121255) do
 
   create_table "entries", force: :cascade do |t|
     t.integer "user_id"
@@ -20,6 +19,16 @@ ActiveRecord::Schema.define(version: 2019_10_16_070236) do
     t.datetime "updated_at", null: false
     t.index ["room_id"], name: "index_entries_on_room_id"
     t.index ["user_id"], name: "index_entries_on_user_id"
+  end
+
+  create_table "message_teams", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.integer "team_id", null: false
+    t.index ["team_id"], name: "index_message_teams_on_team_id"
+    t.index ["user_id"], name: "index_message_teams_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -61,7 +70,6 @@ ActiveRecord::Schema.define(version: 2019_10_16_070236) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 
   create_table "teams", force: :cascade do |t|
     t.integer "user_id"
