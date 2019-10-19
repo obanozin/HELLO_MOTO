@@ -27,7 +27,9 @@
 
 <h1>Chat room</h1>
 
-<div id="message_teams">
+
+
+<div id='message_teams' data-team_id="<%= @team.id %>">
   <%= render @messages %>
 </div>
 
@@ -35,3 +37,4 @@
   <label>Say something:</label><br>
   <input type="text" data-behavior="room_team_speaker">
 </form>
+

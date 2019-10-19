@@ -11,8 +11,7 @@ class TeamsController < ApplicationController
   # GET /teams/1.json
   def show
     @team = Team.find(params[:id])
-
-    @messages = MessageTeam.all
+    @messages = @team.message_teams
   end
 
   # GET /teams/new

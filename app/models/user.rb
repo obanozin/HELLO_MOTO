@@ -7,6 +7,7 @@ class User < ApplicationRecord
 	has_many :entries
 	has_many :teams
 	has_many :team_members
+	has_many :message_teams
 
 
   # Include default devise modules. Others available are:
