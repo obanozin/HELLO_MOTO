@@ -1,6 +1,29 @@
 <h1>Editing Touring</h1>
+<%= @tourings.inspect %>
+<%= form_for(@tourings, url: "/teams/#{@tourings.team_id}/tourings/#{@tourings.id}", html: {method: 'PATCH'}) do |f| %>
 
-<%= render 'form', touring: @touring %>
+    <div>
+        <%= f.attachment_field :touring_image %>
+    </div>
 
-<%= link_to 'Show', @touring %> |
-<%= link_to 'Back', tourings_path %>
+    <div>
+    	<h5>ツーリング名</h5>
+    	<%= f.text_area :touring_name %>
+    </div>
+    <div>
+		<h5>ツーリング内容</h5>
+		<%= f.text_area :touring_detail %>
+	</div>
+	<div>
+		<h5>行き先</h5>
+		<%= f.text_area :destination %>
+	</div>
+	<div>
+		<h5>日付</h5>
+		<%= f.text_area :touring_date %>
+	</div>
+     <%= f.submit %>
+
+
+<% end %>
+

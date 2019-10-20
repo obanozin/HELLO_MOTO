@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :tourings
 	devise_for :users
 
 	resources :teams do

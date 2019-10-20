@@ -11,7 +11,6 @@ class TouringsController < ApplicationController
   # GET /tourings/1.json
   def show
     @tourings = Touring.find(params[:id])
-    
   end
 
   # GET /tourings/new
@@ -23,6 +22,7 @@ class TouringsController < ApplicationController
 
   # GET /tourings/1/edit
   def edit
+    @tourings = Touring.find(params[:id])
   end
 
   # POST /tourings
@@ -31,21 +31,15 @@ class TouringsController < ApplicationController
     @touring = Touring.new(touring_params)
     @touring.user = current_user
     @touring.save
-    binding.pry
   end
 
   # PATCH/PUT /tourings/1
   # PATCH/PUT /tourings/1.json
   def update
-    respond_to do |format|
-      if @touring.update(touring_params)
-        format.html { redirect_to @touring, notice: 'Touring was successfully updated.' }
-        format.json { render :show, status: :ok, location: @touring }
-      else
-        format.html { render :edit }
-        format.json { render json: @touring.errors, status: :unprocessable_entity }
-      end
-    end
+    @team = Team.find(params[:team_id])
+    @tourings = Touring.find(params[:id])
+    @tourings.update(touring_params)
+    redirect_to team_touring_path(@tourings)
   end
 
   # DELETE /tourings/1
