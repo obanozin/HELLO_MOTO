@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Touring Members</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @touring_members.each do |touring_member| %>
+      <tr>
+        <td><%= link_to 'Show', touring_member %></td>
+        <td><%= link_to 'Edit', edit_touring_member_path(touring_member) %></td>
+        <td><%= link_to 'Destroy', touring_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Touring Member', new_touring_member_path %>

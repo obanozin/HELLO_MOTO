@@ -6,6 +6,11 @@
 <p>詳細:<%= @tourings.touring_detail %></p><br>
 <p>責任者:<%= @tourings.user.user_name %></p><br>
 
+<% unless TouringMember.is_member?(@tourings, current_user) %>
+	<%= link_to "参加する", team_touring_touring_members_path(@tourings.team, @tourings), method: :POST %>
+	<% else  %>
+	<%= link_to "参加取り消し", team_touring_touring_member_path(@tourings.team, @tourings, @touring_member), method: :DELETE %>
+<% end %>
 
 
 <%= link_to "一覧へ戻る", team_tourings_path(@tourings.team_id) %>

@@ -9,6 +9,7 @@ class User < ApplicationRecord
 	has_many :team_members
 	has_many :message_teams
 	has_many :tourings
+	has_many :touring_members
 
 
   # Include default devise modules. Others available are:
