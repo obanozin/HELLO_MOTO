@@ -27,16 +27,17 @@
 
 <%= link_to "delete", team_path(@team.id), method: :delete, "data-confirm" => "本当に消しますか？消去したチームデータは元に戻せません。" %>
 
+
 <h1>Chat room</h1>
-
-
-
-<div id='message_teams' data-team_id="<%= @team.id %>">
-  <%= render @messages %>
-</div>
 
 <form>
   <label>Say something:</label><br>
   <input type="text" data-behavior="room_team_speaker">
 </form>
+
+<div id='message_teams' data-team_id="<%= @team.id %>">
+  <%= render @messages %>
+</div>
+
+
 

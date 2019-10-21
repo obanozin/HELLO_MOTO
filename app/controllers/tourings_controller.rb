@@ -11,6 +11,7 @@ class TouringsController < ApplicationController
   # GET /tourings/1.json
   def show
     @tourings = Touring.find(params[:id])
+    @touring_member = TouringMember.find_by(user: current_user, touring: @tourings)
   end
 
   # GET /tourings/new
@@ -28,9 +29,11 @@ class TouringsController < ApplicationController
   # POST /tourings
   # POST /tourings.json
   def create
+    @team = Team.find(params[:team_id])
     @touring = Touring.new(touring_params)
     @touring.user = current_user
     @touring.save
+    redirect_to team_tourings_path(@team.id)
   end
 
   # PATCH/PUT /tourings/1

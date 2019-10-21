@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@moto_infos = MotoInfo.all
+		@moto_infos = @user.moto_infos
 
 		# @prefecture = Prefecture.find(params[:id])
 		# @prefectures = @user.prefectures

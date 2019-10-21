@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_071015) do
+ActiveRecord::Schema.define(version: 2019_10_20_103922) do
 
   create_table "entries", force: :cascade do |t|
     t.integer "user_id"
@@ -82,6 +82,15 @@ ActiveRecord::Schema.define(version: 2019_10_19_071015) do
     t.string "region_team"
     t.string "age_range"
     t.string "team_image_id"
+  end
+
+  create_table "touring_members", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "touring_id"
+    t.index ["touring_id"], name: "index_touring_members_on_touring_id"
+    t.index ["user_id", "touring_id"], name: "unique_touring_index", unique: true
   end
 
   create_table "tourings", force: :cascade do |t|

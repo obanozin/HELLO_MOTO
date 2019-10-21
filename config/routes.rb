@@ -2,11 +2,13 @@ Rails.application.routes.draw do
 	devise_for :users
 
 	resources :teams do
-		resources :team_members, :tourings
+		resources :team_members
 		get 'people' => 'team_members#people', as: 'people'
-
+        resources :tourings do
+        	resources :touring_members
+        end
+    end
 		# get 'teams/:team_id/team_members/:id/people' => 'team_members#people'
-	end
 	# get 'teams/:team_id/team_members/:id/people' => 'team_members#people',as: ''
 
 	resources :moto_infos
