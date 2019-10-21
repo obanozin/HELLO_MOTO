@@ -25,7 +25,7 @@ class RoomsController < ApplicationController
     	entries_cnt = Entry.where("user_id = ? and room_id = ? ",current_user.id ,params[:id]).count
     	if entries_cnt == 1
 	    @room = Room.find(params[:id])
-	    @messages = @room.messages
+	    @messages = @room.messages.limit(20).order(created_at: :desc)
 	    else
 	    redirect_to user_path(current_user)
 	    end

@@ -9,7 +9,7 @@ $(document).ready ->
       # Called when the subscription has been terminated by the server
 
     received: (data) ->
-      $('#messages').append data['message']
+      $('#messages').prepend data['message']
 
     speak: (message) ->
       @perform 'speak', message: message

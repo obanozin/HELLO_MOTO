@@ -11,7 +11,7 @@ class TeamsController < ApplicationController
   # GET /teams/1.json
   def show
     @team = Team.find(params[:id])
-    @messages = @team.message_teams
+    @messages = @team.message_teams.limit(20).order(created_at: :desc)
   end
 
   # GET /teams/new
