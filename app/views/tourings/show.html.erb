@@ -22,11 +22,14 @@
 
 <h1>Chat room</h1>
 
-<div id="message_tourings">
+<form>
+  <label>Say something:</label><br>
+  <input type="text" data-behavior="room_touring_speaker">
+</form>
+
+
+<div id='message_tourings' data-touring_id="<%= @tourings.id %>">
   <%= render @messages %>
 </div>
-
-
-
 
 

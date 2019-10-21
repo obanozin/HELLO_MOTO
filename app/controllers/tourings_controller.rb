@@ -12,7 +12,7 @@ class TouringsController < ApplicationController
   def show
     @tourings = Touring.find(params[:id])
     @touring_member = TouringMember.find_by(user: current_user, touring: @tourings)
-    @messages = MessageTouring.all
+    @messages = @tourings.message_tourings.limit(20).order(created_at: :desc)
   end
 
   # GET /tourings/new
