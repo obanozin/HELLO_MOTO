@@ -1,0 +1,2 @@
+class MessageTouring < ApplicationRecord
+end

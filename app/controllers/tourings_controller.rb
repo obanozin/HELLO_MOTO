@@ -12,6 +12,7 @@ class TouringsController < ApplicationController
   def show
     @tourings = Touring.find(params[:id])
     @touring_member = TouringMember.find_by(user: current_user, touring: @tourings)
+    @messages = MessageTouring.all
   end
 
   # GET /tourings/new
