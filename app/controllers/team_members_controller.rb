@@ -12,7 +12,11 @@ class TeamMembersController < ApplicationController
 
   def people
     @team = Team.find(params[:team_id])
-    @team_members = @team.team_members.hold
+    if @team.user == current_user
+      @team_members = @team.team_members.hold
+    else
+      redirect_to teams_path
+    end
   end
   # GET /team_members/new
   def new

@@ -1,5 +1,4 @@
 <h1>Editing Touring</h1>
-<%= @tourings.inspect %>
 <%= form_for(@tourings, url: "/teams/#{@tourings.team_id}/tourings/#{@tourings.id}", html: {method: 'PATCH'}) do |f| %>
     <div>
         <%= f.attachment_field :touring_image %>

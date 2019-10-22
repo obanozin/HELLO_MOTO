@@ -1,16 +1,7 @@
 class MotoInfosController < ApplicationController
   before_action :set_moto_info, only: [:show, :edit, :update, :destroy]
 
-  # GET /moto_infos
-  # GET /moto_infos.json
-  def index
-    @moto_infos = MotoInfo.all
-  end
 
-  # GET /moto_infos/1
-  # GET /moto_infos/1.json
-  def show
-  end
 
   # GET /moto_infos/new
   def new
@@ -19,8 +10,6 @@ class MotoInfosController < ApplicationController
   end
 
   # GET /moto_infos/1/edit
-  def edit
-  end
 
   # POST /moto_infos
   # POST /moto_infos.json
