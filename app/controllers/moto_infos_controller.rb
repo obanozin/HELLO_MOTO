@@ -59,7 +59,7 @@ class MotoInfosController < ApplicationController
   def destroy
     @moto_info.destroy
     respond_to do |format|
-      format.html { redirect_to moto_infos_url, notice: 'Moto info was successfully destroyed.' }
+      format.html { redirect_to user_path(current_user), notice: 'Moto info was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
