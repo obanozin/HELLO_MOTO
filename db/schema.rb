@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_10_21_113555) do
 
+
   create_table "entries", force: :cascade do |t|
     t.integer "user_id"
     t.integer "room_id"
