@@ -62,6 +62,6 @@ class TouringsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def touring_params
-      params.require(:touring).permit(:touring_name, :user_id,:team_id,:touring_image,:destination,:touring_date,:touring_detail)
+      params.require(:touring).permit(:touring_name, :user_id,:team_id,:touring_image,:destination,:touring_date,:touring_detail, :meet)
     end
 end
