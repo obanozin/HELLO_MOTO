@@ -1,43 +1,56 @@
+<% if @member.include?(current_user.id) %>
+
+	<div><%= @team.team_name %><div>
+	<div><%= attachment_image_tag @team, :team_image, :fill, 60,  60 ,fallback: "no_image.jpg",size: '150x150' %></div>
+	<div>リーダー:<%= @team.user.nickname %></div>
+	<div>活動地域:<%= @team.user.prefecture.name %></div>
+	<div>年齢層:<%= @team.age_range %></div>
+	<div>紹介文:<%= @team.team_introduction %></div>
+
+	<div>メンバー数:<%= @team.team_members.approval.size %>人</div>
+
+	<p>チャット</p>
+	<p>ツーリング</p>
+	<p>メンバー</p>
+	<%= link_to "メンバー一覧", team_team_members_path(@team.id) %>
+	<%= link_to "メンバー一覧", team_team_members_path(@team.id) %>
+	<%= link_to "ツーリング一覧", team_tourings_path(@team.id) %>
+
+
+	<%= link_to 'Back', teams_path %>
+	<% if @team.user == current_user  %>
+	    <%= link_to "申請一覧", team_people_path(@team.id) %>
+    	<%= link_to "チーム編集", edit_team_path(@team) %>
+		<%= link_to "delete", team_path(@team.id), method: :delete, "data-confirm" => "本当に消しますか？消去したチームデータは元に戻せません。" %>
+	<% end %>
+	<form>
+	  <label>Say something:</label><br>
+	  <input type="text" data-behavior="room_team_speaker">
+	</form>
+
+	<div id='message_teams' data-team_id="<%= @team.id %>">
+	  <%= render @messages %>
+	</div>
+	
+	<% else %>
+	
+		<div><%= @team.team_name %><div>
+	<div><%= attachment_image_tag @team, :team_image, :fill, 60,  60 ,fallback: "no_image.jpg",size: '150x150' %></div>
+	<div>リーダー:<%= @team.user.nickname %></div>
+	<div>活動地域:<%= @team.user.prefecture.name %></div>
+	<div>年齢層:<%= @team.age_range %></div>
+	<div>紹介文:<%= @team.team_introduction %></div>
+
+	<div>メンバー数:<%= @team.team_members.approval.size %>人</div>
+	<%= link_to "メンバー一覧", team_team_members_path(@team.id) %>
+	<%= link_to "参加申請", new_team_team_member_path(@team.id) %>
+	<%= link_to '一覧へ戻る', teams_path %>
+
+
+<% end  %>
 
 
 
-<div><%= @team.team_name %><div>
-<div><%= attachment_image_tag @team, :team_image, :fill, 60,  60 ,fallback: "no_image.jpg",size: '150x150' %></div>
-<div>リーダー:<%= @team.user.nickname %></div>
-<div>活動地域:<%= @team.user.prefecture.name %></div>
-<div>年齢層:<%= @team.age_range %></div>
-<div>紹介文:<%= @team.team_introduction %></div>
 
-<div>メンバー数:<%= @team.team_members.approval.size + 1 %>人</div>
-
-<p>チャット</p>
-<p>ツーリング</p>
-<p>メンバー</p>
-<%= link_to "メンバー一覧", team_team_members_path(@team.id) %>
-<%= link_to "参加申請", new_team_team_member_path(@team.id) %>
-<%= link_to "メンバー一覧", team_team_members_path(@team.id) %>
-<%= link_to "申請一覧", team_people_path(@team.id) %>
-<%= link_to "ツーリング一覧", team_tourings_path(@team.id) %>
-
-
-
-<%= link_to "チーム編集", edit_team_path(@team) %>
-
-<%= link_to 'Back', teams_path %>
-
-<%= link_to "delete", team_path(@team.id), method: :delete, "data-confirm" => "本当に消しますか？消去したチームデータは元に戻せません。" %>
-
-
-<h1>Chat room</h1>
-
-<form>
-  <label>Say something:</label><br>
-  <input type="text" data-behavior="room_team_speaker">
-</form>
-
-<div id='message_teams' data-team_id="<%= @team.id %>">
-  <%= render @messages %>
-</div>
-
-
-
+<% if @team.user == current_user  %>
+<% end  %>

@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
 
-<h1>チーム一覧</h1>
+<h1>チーム一覧</h1> <%= link_to "新規クラブ・チーム作成",  new_team_path %>
 
   <tbody>
     <% @teams.each do |team| %>
@@ -12,3 +11,4 @@
       <p>チーム紹介 : <%= team.team_introduction %></p>
     </div>
     <% end %>
+    <%= paginate @teams %>

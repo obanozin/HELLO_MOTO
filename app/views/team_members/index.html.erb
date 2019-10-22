@@ -9,9 +9,6 @@
   </thead>
 
   <tbody>
-    <tr>
-      <td><%= @team.user.nickname %></td>
-    </tr>
     <% @team_members.each do |team_member| %>
       <tr>
         <td><%= team_member.user.nickname %></td>

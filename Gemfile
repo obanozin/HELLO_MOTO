@@ -69,4 +69,5 @@ gem 'seed-fu'
 gem 'pry-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'kaminari', '~> 0.17.0'
 

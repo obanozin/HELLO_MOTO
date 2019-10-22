@@ -1,16 +1,15 @@
 class TeamsController < ApplicationController
-  # before_action :set_team, only: [:show, :edit, :update, :destroy]
 
-  # GET /teams
-  # GET /teams.json
+  PER = 6
   def index
-    @teams = Team.all
+    @teams = Team.page(params[:page]).per(PER).order(id: "DESC")
   end
 
   # GET /teams/1
   # GET /teams/1.json
   def show
     @team = Team.find(params[:id])
+    @member = TeamMember.where(team_id: params[:id]).where(is_team: 1).pluck(:user_id)
     @messages = @team.message_teams.limit(20).order(created_at: :desc)
   end
 
@@ -22,7 +21,12 @@ class TeamsController < ApplicationController
 
   # GET /teams/1/edit
   def edit
+
     @team = Team.find(params[:id])
+    if @team.user == current_user
+    else
+      redirect_to teams_path
+    end
   end
 
   # POST /teams
@@ -31,6 +35,18 @@ class TeamsController < ApplicationController
     @team = Team.new(team_params)
     @team.user = current_user
     @team.save!
+
+    #team_member_params = {}
+    team_member_params = {
+      team_id: @team.id,
+      user_id: current_user.id,
+      request_comment: "",
+      is_team: 1
+    }
+    #binding.pry
+    @member = TeamMember.new(team_member_params)
+    @member.save
+
     redirect_to teams_path
   end
 

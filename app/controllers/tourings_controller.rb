@@ -4,6 +4,15 @@ class TouringsController < ApplicationController
   # GET /tourings.json
   def index
     @team = Team.find(params[:team_id])
+    user_meta = @team.team_members.find_by(user: current_user.id)
+    if user_meta.nil?
+      redirect_to teams_path
+      return
+    end
+    if user_meta.is_team == 1
+       redirect_to teams_path
+       return
+    end
     @tourings = @team.tourings
   end
 
@@ -11,15 +20,34 @@ class TouringsController < ApplicationController
   # GET /tourings/1.json
   def show
     @tourings = Touring.find(params[:id])
-    @touring_member = TouringMember.find_by(user: current_user, touring: @tourings)
-    @messages = @tourings.message_tourings.limit(20).order(created_at: :desc)
+    @team = Team.find(params[:team_id])
+    user_meta = @team.team_members.find_by(user: current_user.id)
+    if user_meta.nil?
+      redirect_to teams_path
+      return
+    end
+    unless user_meta.is_team == 1
+      @touring_member = TouringMember.find_by(user: current_user, touring: @tourings)
+      @messages = @tourings.message_tourings.limit(20).order(created_at: :desc)
+    else
+      redirect_to teams_path
+    end
   end
 
   # GET /tourings/new
   def new
     @user = current_user
     @team = Team.find(params[:team_id])
-    @touring = Touring.new
+    user_meta = @team.team_members.find_by(user: current_user.id)
+    if user_meta.nil?
+      redirect_to teams_path
+      return
+    end
+    unless user_meta.is_team == 1
+      @touring = Touring.new
+    else
+      redirect_to teams_path
+    end
   end
 
   # GET /tourings/1/edit
