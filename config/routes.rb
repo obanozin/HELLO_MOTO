@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+    devise_for :admins
 	devise_for :users
 	get 'users/:id/cancel' => 'users#cancel'
 	put 'users/:id/is_deleted' => 'users#is_deleted'
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
 
 	resources :moto_infos
 	resources :users
+	resources :admins
 
 	resources :rooms ,only:[:show]
 	post "/room/create/:user_id" => "rooms#create" ,as:'room_create'
