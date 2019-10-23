@@ -1,0 +1,44 @@
+
+
+
+
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>名前</th>
+			<th>ニックネーム</th>
+			<th>性別</th>
+			<th>活動地域</th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @user.each do |user| %>
+			<tr>
+				<td>
+					<%= user.id %>
+				</td>
+				<td>
+					<%= user.user_name %>
+				</td>
+				<td>
+					<%= user.nickname %>
+				</td>
+				<td>
+					<%= user.sex %>
+				</td>
+				<td>
+					<%= user.prefecture.name  %>
+				</td>
+				<td>
+                     <%= link_to "編集",  edit_admin_user_path(user.id) %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+	<tr>
+		<th><h3><%= link_to "戻る", admins_path %></h3></th>
+	</tr>
+</table>

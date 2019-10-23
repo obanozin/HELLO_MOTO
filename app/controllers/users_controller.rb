@@ -18,17 +18,18 @@ class UsersController < ApplicationController
 	def update
 	    @user = User.find(params[:id])
 	    @user.update(user_params)
-	    redirect_to user_path(current_user)
+	    if admin_signed_in?
+	    	redirect_to admins_path
+	    else
+	        redirect_to user_path(current_user)
+	    end
 		
 	end
-	def is_deleted
-		binding.pry
-	    @user = User.find(params[:id])
-	    @user.update!(is_deleted: true)
-	    redirect_to new_user_registration_path
-	end
 	def cancel
-		@user = current_user
+		@user = User.find(params[:id])
+	  if @user.id != current_user.id
+	     redirect_to user_path(current_user)
+	 end
 	end
 
 
