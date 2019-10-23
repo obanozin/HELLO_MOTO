@@ -1,0 +1,8 @@
+<%= form_for(@user) do |f| %>
+	<div>
+		<h1>退会確認</h1>
+		<label><%= f.radio_button :is_deleted, "false" %>このまま</label>
+		<label><%= f.radio_button :is_deleted, "true"  %>退会させる</label>
+		<%= f.submit '決定' %>
+	</div>
+<% end %>

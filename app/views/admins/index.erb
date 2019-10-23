@@ -1,0 +1,9 @@
+<h1>管理者ページ</h1><br>
+
+<%= link_to "ユーザー一覧", admin_users_path %><br>
+<%= link_to "チーム一覧", admin_teams_path %>
+
+
+
+
+<%= button_to "ログアウト", destroy_admin_session_path, method: :delete %>

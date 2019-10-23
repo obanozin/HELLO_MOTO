@@ -63,7 +63,11 @@ class TeamsController < ApplicationController
   def destroy
     @team = Team.find(params[:id])
     @team.destroy
-    redirect_to teams_path
+    if admin_signed_in?
+          redirect_to admins_path
+    else
+      redirect_to teams_path
+    end
   end
 
 
