@@ -1,7 +1,8 @@
 class AdminUsersController < ApplicationController
 before_action :authenticate_admin!
+    PER = 10
 	def index
-		@user = User.all
+		@user = User.page(params[:page]).per(PER)
 	end
 	def edit
 		@user = User.find(params[:id])

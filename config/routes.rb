@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
 	resources :moto_infos
 	resources :users
-	resources :admins, :admin_users
+	resources :admins, :admin_users, :admin_teams
 
 	resources :rooms ,only:[:show]
 	post "/room/create/:user_id" => "rooms#create" ,as:'room_create'
