@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 	devise_for :users
+	get 'users/:id/cancel' => 'users#cancel'
+	put 'users/:id/is_deleted' => 'users#is_deleted'
 
 	resources :teams do
 		resources :team_members
