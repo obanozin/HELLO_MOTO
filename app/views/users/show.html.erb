@@ -10,7 +10,7 @@
 
       <%= button_to "編集", {controller: 'users', action: 'edit'}, {method: :get, class: "mypage-button"}  %>
     <br>
-    <div class="my-region">活動地域:<%= @user.prefecture.name %> <%= @user.sex == "man"? "男性" :"女性" %></div>
+    <div class="my-region">活動地域:<%= @user.prefecture.name %></div>
     <div class="my-introduction">
       <div class="intro-text">自己紹介</div>
       <br>
