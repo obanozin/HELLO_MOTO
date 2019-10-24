@@ -1,51 +1,70 @@
-<h2>Sign up</h2>
+<div class="main-visual">
+  <div class="new-body-up">
+    <div class="new-up-box">
+      <h2 class="log-in-title">Sign up</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="test clearfix">
+          <div class="sign-nickname-box">
+            <div class="field">
+              <%= f.label :nickname, "ニックネーム" %><br />
+              <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname",class: "nickname_field" %>
+            </div>
+          </div>
+          <div class="sign-name-box">
+            <div class="field">
+              <%= f.label :user_name, "本名" %><br />
+              <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name",class: "name_field" %>
+            </div>
+          </div>
+        </div>
+        <div class="sign-email-up-box">
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "email_pass_up_field" %>
+          </div>
+        </div>
+        <div class="sex-box">
+          <div class="field">
+              <%= f.label :性別 %><br />
+              <%= f.label :男性 %>
+              <%= f.radio_button :sex, :man %>
+              <%= f.label :女性 %>
+              <%= f.radio_button :sex, :woman %>
+          </div>
+        </div>
+        <div class="prefecture-box">
+          <div class="field">
+            <div>活動地域</div>
+            <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '都道府県',class: "prefecture_field" %>
+          </div>
+        </div>
+        <div class="sign-password-up-box">
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password",class: "email_pass_up-field" %>
+          </div>
+        </div>
+        <div class="sign-password-up-box">
+          <div>
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "email_pass_up-field"  %>
+          </div>
+        </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  
-
-  <div class="field">
-    <%= f.label :nickname, "ニックネーム" %><br />
-    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+        <div class="actions">
+          <%= f.submit "Sign up",class: "btn-sign" %>
+        </div>
+      <% end %>
+      <div class="sign-text">
+        アカウントをお持ちですか？
+      </div>
+      <div class="sign-link">
+          <%= link_to "ログイン画面へ", new_user_session_path, class:"sign-link-text" %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :user_name, "本名" %><br />
-    <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sex %><br />
-    <%= f.label :man %>
-    <%= f.radio_button :sex, :man %>
-    <%= f.label :woman %>
-    <%= f.radio_button :sex, :woman %>
-  </div>
-  <div class="field">
-    <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '選択して下さい' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

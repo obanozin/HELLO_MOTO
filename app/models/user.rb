@@ -11,6 +11,7 @@ class User < ApplicationRecord
 	has_many :tourings
 	has_many :touring_members
 	has_many :message_tourings
+	validates :prefecture_id, presence: true
 
 
   # Include default devise modules. Others available are:
