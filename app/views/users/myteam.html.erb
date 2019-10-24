@@ -1,0 +1,18 @@
+<h4>所属チーム一覧</h4>
+<table>
+  <thead>
+    <tr>
+      <th>チーム名</th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+    <% @myteam.each do |myteam| %>
+      <tr>
+        <td><%= link_to myteam.team.team_name, team_path(myteam.team) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "戻る", :back %>

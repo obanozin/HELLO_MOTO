@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 	end
     devise_for :admins
 	devise_for :users
+	get 'users/:id/myteam' => 'users#myteam'
 	get 'users/:id/cancel' => 'users#cancel'
 	put 'users/:id/is_deleted' => 'users#is_deleted'
 
