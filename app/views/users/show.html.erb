@@ -4,7 +4,7 @@
 
   <div class="profile-main">
       <%= attachment_image_tag @user, :profile_image, :fill, 200, 200,fallback: "no_image.jpg",size: '150x150',class: "top_image" %>
-    <div class="my-page-name"><%= @user.nickname %></div>
+    <div class="my-page-name"><%= @user.nickname %> #<%= @user.user_name %></div>
     <div class="name-border"></div>
     <% if @user == current_user %>
 
@@ -19,8 +19,7 @@
     <div class="border-moto-info"></div>
     <div class="moto-info">
       <div class="moto-info-title">自分のバイク</div>
-      <%= link_to '車両を追加', new_moto_info_path(current_user) %>
-      <table>
+      <table class="moto-info-table">
         <thead>
           <tr>
             <th class="moto-info-th"></th>
@@ -37,14 +36,22 @@
               <td class="moto-info-th"><%= moto_info.maker_name %></td>
               <td class="moto-info-th"><%= moto_info.moto_name %></td>
               <td class="moto-info-th"><%= moto_info.volume %>cc</td>
-              <td class="moto-info-th"><%= link_to '車両を削除', moto_info, method: :delete, data: { confirm: '削除しますか?' } %></td>
+              <td class="moto-info-th">
+                <div class="moto-info-delete-box">
+                  <%= link_to '車両を削除', moto_info, method: :delete, data: { confirm: '削除しますか?' } , class: "moto-info-delete" %>
+                </div>
+              </td>
             </tr>
           <% end %>
         </tbody>
       </table>
+      <div class="moto-info-add-box">
+          <%= link_to '車両を追加', new_moto_info_path(current_user), class: "moto-info-add" %>
+      </div>
     </div>
-    <div>本名<%= @user.user_name %></div>
-    <%= button_to "ログアウト", destroy_user_session_path, method: :delete,class: "my_logout_btn" %>
+    <div class="log-out-box">
+      <%= button_to "ログアウト", destroy_user_session_path, method: :delete,class: "my_logout_btn" %>
+    </div>
   </div>
   <% else %>
   <table>

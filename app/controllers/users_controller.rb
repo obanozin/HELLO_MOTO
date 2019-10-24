@@ -25,6 +25,11 @@ class UsersController < ApplicationController
 	    end
 		
 	end
+	def myteam
+		@user = User.find(params[:id])
+		@myteam = @user.team_members.approval
+
+	end
 	def cancel
 		@user = User.find(params[:id])
 	  if @user.id != current_user.id
