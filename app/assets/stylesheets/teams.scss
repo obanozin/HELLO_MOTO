@@ -23,6 +23,21 @@
     position: relative;
     /* margin-top: 130px; */
 }
+.team-index-title {
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "Yu Gothic", YuGothic, Arial, "メイリオ", Meiryo, sans-serif;
+    text-align: center;
+}
+.team-index-add-box{
+	width: 100%;
+}
+.team-index-add{
+	width: 300px;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "Yu Gothic", YuGothic, Arial, "メイリオ", Meiryo, sans-serif;
+    margin: auto;
+    margin-left: 1000px;
+}
 .team-index-image{
 	position: absolute;
 	border-radius: 18px;
@@ -88,4 +103,93 @@
     /* margin: auto; */
     padding: 0px 22px 30px;
     margin-left: 235px;
+}
+
+/*show page*/
+.team-page-back {
+    background-image: url(IMG_20190312_171354.jpg);
+    width: 1440px;
+    height: 100%;
+    background-size: cover;
+    background-position: bottom;
+    padding-top: 225px;
+    position: relative;
+    padding-bottom: 225px;
+}
+.team-main {
+    opacity: 0.95;
+    width: 800px;
+    height: auto;
+    margin: auto;
+    background-color: white;
+    padding-top: 75px;
+    border-radius: 38px;
+    box-shadow: -1px 1px 10px 10px rgba(55, 152, 149, 0.24);
+    position: relative;
+    margin-top: 130px;
+    border: solid 1px white;
+}
+.team-top-image {
+    border-radius: 49px;
+    position: absolute;
+    left: 297px;
+    top: -100px;
+    border: solid white 1px;
+}
+.team-page-name{
+    text-align: center;
+    font-size: 28px;
+    font-family: monospace;
+    padding-top: 30px;
+}
+.team-le-re{
+    width: 100%;
+    margin-top: 30px;
+}
+.team-leader{
+    display: inline;
+    width: 50%;
+    text-align: right;
+    margin-left: 252px;
+
+}
+.team-region{
+    float: right;
+    width: 50%;
+    text-align: left;
+}
+.team-age-box{
+    width: 100%;
+    margin-top: 10px;
+}
+.age-text {
+    width: 150px;
+    margin: auto;
+}
+.team-member-count {
+    position: absolute;
+    right: 162px;
+    top: 123px;
+}
+.team-chat-box{
+    width: 100%;
+}
+.team-chat {
+    width: 550px;
+    margin: 50px auto;
+}
+.back-link-box{
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+}
+.back-link{
+    text-decoration: none;
+    color: black;
+    width: 50px;
+}
+.add-link-box {
+    width: 100%;
+    margin: 20px;
+    margin-left: 321px;
 }

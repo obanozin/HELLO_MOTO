@@ -1,8 +1,11 @@
 <body class="team-back">
   <%= render 'users/header' %>
 
-
-  <h1>チーム一覧</h1> <%= link_to "新規クラブ・チーム作成",  new_team_path %>
+  
+  <div class="team-index-title">チーム一覧</div>
+  <div class="team-index-add-box">
+   <%= link_to "新規クラブ・チーム作成",  new_team_path, class: "team-index-add"  %>
+  </div>
 
     <tbody>
       <% @teams.each do |team| %>
