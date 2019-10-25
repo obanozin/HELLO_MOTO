@@ -1,58 +1,77 @@
-<% if @member.include?(current_user.id) %>
+<body class="team-page-back">
+	<%= render 'users/header' %>
+    <%= render 'users/footer' %>
 
-	<div><%= @team.team_name %><div>
-	<div><%= attachment_image_tag @team, :team_image, :fill, 60,  60 ,fallback: "no_image.jpg",size: '150x150' %></div>
-	<div>リーダー:<%= @team.user.nickname %></div>
-	<div>活動地域:<%= @team.user.prefecture.name %></div>
-	<div>年齢層:<%= @team.age_range %></div>
-	<div>紹介文:<%= @team.team_introduction %></div>
+	<div class="team-main">
+			<div><%= attachment_image_tag @team, :team_image, :fill, 200,  200 ,fallback: "no_image.jpg",size: '200x200',class: "team-top-image " %></div>
+		<% if @member.include?(current_user.id) %>
+			<div class="team-page-name"><%= @team.team_name %></div>
+			<div class="name-border"></div>
+			<div class="team-le-re">
+				<div class="team-leader">リーダー:<%= @team.user.nickname %></div>
+				<div class="team-region">活動地域:<%= @team.user.prefecture.name %></div>
+		    </div>
+		    <div class="team-member-count">メンバー　<%= @team.team_members.approval.size %>人</div>
+		    <div class="team-age-box">
+				<div class="age-text" >年齢層:<%= @team.age_range %></div>
+			</div>
+			<div class="my-introduction">
+				<div class="intro-text">紹介文:</div><br>
+				<div class="intro-text-main"><%= @team.team_introduction %></div>
+			</div>
 
-	<div>メンバー数:<%= @team.team_members.approval.size %>人</div>
-
-	<div>保留数:<%= @team.team_members.hold.size %>人</div>
-
-	<p>チャット</p>
-	<p>ツーリング</p>
-	<p>メンバー</p>
-	<%= link_to "メンバー一覧", team_team_members_path(@team.id) %>
-	<%= link_to "メンバー一覧", team_team_members_path(@team.id) %>
-	<%= link_to "ツーリング一覧", team_tourings_path(@team.id) %>
-
-
-	<%= link_to 'Back', teams_path %>
-	<% if @team.user == current_user  %>
-	    <%= link_to "申請一覧", team_people_path(@team.id) %>
-    	<%= link_to "チーム編集", edit_team_path(@team) %>
-		<%= link_to "delete", team_path(@team.id), method: :delete, "data-confirm" => "本当に消しますか？消去したチームデータは元に戻せません。" %>
-	<% end %>
-	<form>
-	  <label>Say something:</label><br>
-	  <input type="text" data-behavior="room_team_speaker">
-	</form>
-
-	<div id='message_teams' data-team_id="<%= @team.id %>">
-	  <%= render @messages %>
-	</div>
-	
-	<% else %>
-	
-		<div><%= @team.team_name %><div>
-	<div><%= attachment_image_tag @team, :team_image, :fill, 60,  60 ,fallback: "no_image.jpg",size: '150x150' %></div>
-	<div>リーダー:<%= @team.user.nickname %></div>
-	<div>活動地域:<%= @team.user.prefecture.name %></div>
-	<div>年齢層:<%= @team.age_range %></div>
-	<div>紹介文:<%= @team.team_introduction %></div>
-
-	<div>メンバー数:<%= @team.team_members.approval.size %>人</div>
-	<%= link_to "メンバー一覧", team_team_members_path(@team.id) %>
-	<%= link_to "参加申請", new_team_team_member_path(@team.id) %>
-	<%= link_to '一覧へ戻る', teams_path %>
+			<%= link_to "メンバー一覧", team_team_members_path(@team.id) %>
+			<%= link_to "ツーリング一覧", team_tourings_path(@team.id) %>
 
 
-<% end  %>
+			<%= link_to 'Back', teams_path %>
+			<% if @team.user == current_user  %>
+			    <%= link_to "申請一覧", team_people_path(@team.id) %>
+			    <div>保留数:<%= @team.team_members.hold.size %>人</div>
+		    	<%= link_to "チーム編集", edit_team_path(@team) %>
+				<%= link_to "delete", team_path(@team.id), method: :delete, "data-confirm" => "本当に消しますか？消去したチームデータは元に戻せません。" %>
+			<% end %>
+			<div class="border-moto-info"></div>
+			<div class="team-chat-box">
+				<div class="team-chat">
+					<form>
+					  <label>Say something:</label><br>
+					  <input type="text" data-behavior="room_team_speaker">
+					</form>
 
 
+					<div id='message_teams' data-team_id="<%= @team.id %>">
+					  <%= render @messages %>
+					</div>
+				</div>
+			</div>
+			
+			<% else %>
+			<div class="team-page-name"><%= @team.team_name %></div>
+			<div class="team-le-re">
+				<div class="team-leader">リーダー:<%= @team.user.nickname %></div>
+				<div class="team-region">活動地域:<%= @team.user.prefecture.name %></div>
+		    </div>
+		    <div class="team-age-box">
+				<div class="age-text" >年齢層:<%= @team.age_range %></div>
+			</div>
+			<div class="my-introduction">
+				<div class="intro-text">紹介文</div><br>
+				<div class="intro-text-main"><%= @team.team_introduction %></div>
+			</div>
+
+			<div class="team-member-count">メンバー　<%= @team.team_members.approval.size %>人</div>
+			<div class="add-link-box">
+			　　　　<%= link_to "参加申請", new_team_team_member_path(@team.id),class: "back-link"  %>
+		    </div>
 
 
-<% if @team.user == current_user  %>
-<% end  %>
+		<% end  %>
+		<div class="back-link-box">
+		    <%= link_to '戻る', teams_path,class: "back-link" %>
+	    </div>
+
+    </div>
+
+</div>
+
