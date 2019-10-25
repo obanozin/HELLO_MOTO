@@ -1,4 +1,11 @@
 <body class="my-page-back">
+  <header class="header-main">
+    <a class="logo">HELLO MOTO</a>
+    <%= link_to "新しいチームを見つけに", teams_path, class: "header-link-japan" %>
+    <%= link_to "所属チーム一覧へ", "/users/#{current_user.id}/myteam",class: "header-link-japan-2" %>
+    <%= link_to  "ログアウト", destroy_user_session_path, method: :delete, class: "header-link-japan-3" %>
+
+  </header>
 
 
 
@@ -54,42 +61,39 @@
     </div>
   </div>
   <% else %>
-  <table>
+
+  <%= link_to "メッセージを送る", room_create_path(@user.id), method:'POST',class: "message-btn" %>
+
+  <div class="my-region">活動地域:<%= @user.prefecture.name %></div>
+    <div class="my-introduction">
+      <div class="intro-text">自己紹介</div>
+      <br>
+      <div class="intro-text-main"><%= @user.user_introduction %></div>
+    </div>
+  <div class="border-moto-info"></div>
+  <table class="moto-info-table">
     <thead>
       <tr>
+        <th class="moto-info-th"></th>
         <th></th>
         <th></th>
         <th></th>
-        <th></th>
-        <th colspan="3"></th>
       </tr>
     </thead>
 
     <tbody>
       <% @moto_infos.each do |moto_info| %>
-        <tr>
-          <td><%= moto_info.maker_name %></td>
-          <td><%= moto_info.moto_name %></td>
-          <td><%= moto_info.volume %></td>
-          <td></td>
-
+        <tr  class="moto-info">
+          <td class="moto-info-th"><%= moto_info.maker_name %></td>
+          <td class="moto-info-th"><%= moto_info.moto_name %></td>
+          <td class="moto-info-th"><%= moto_info.volume %>cc</td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
-  <br>
-
-  <%= link_to "メッセージを送る", room_create_path(@user.id), method:'POST' %>
-
-
-  <div>ニックネーム<%= @user.nickname %></div>
-  <div>性別<%= @user.sex %></div>
-  <div>住所<%= @user.prefecture.name %></div>
-  <div>自己紹介<%= @user.user_introduction %></div>
-  <div>自己紹介<%= @user.sex %></div>
-
   <% end %>
+  <%= render 'users/list' %>
 
 
 </body>

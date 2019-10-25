@@ -1,34 +1,49 @@
-ユーザー編集
+<body class="my-page-back">
+  <header class="header-main">
+    <a class="logo">HELLO MOTO</a>
+    <%= link_to "新しいチームを見つけに", teams_path, class: "header-link-japan" %>
+    <%= link_to "所属チーム一覧へ", "/users/#{current_user.id}/myteam",class: "header-link-japan-2" %>
+    <%= link_to  "ログアウト", destroy_user_session_path, method: :delete, class: "header-link-japan-3" %>
+
+  </header>
+    <div class="profile-main-edit">
+	ユーザー編集
 
 
-<%= form_for(@user) do |f| %>
-    <div>
-        <%= f.attachment_field :profile_image %>
-    </div>
+	<%= form_for(@user) do |f| %>
+	    <div>
+	        <%= f.attachment_field :profile_image %>
+	    </div>
 
-	<div>
-		<h5>本名</h5>
-		<%= f.text_field :user_name%>
+		<div>
+			<h5>本名</h5>
+			<%= f.text_field :user_name%>
+		</div>
+
+		<div>
+			<h5>ニックネーム</h5>
+			<%= f.text_field :nickname%>
+		</div>
+
+	    <div class="field">都道府県<br>
+	        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '選択して下さい' %>
+	    </div>
+
+
+
+		<div>
+			<h5>自己紹介</h5>
+			<%= f.text_area :user_introduction %>
+		</div>
+
+
+
+
+		<%= f.submit '確定'%>
+		<% end %>
+		<%= link_to "マイページへ戻る", user_path(current_user), class: "back_to_mypage" %>
+
+		
 	</div>
-
-	<div>
-		<h5>ニックネーム</h5>
-		<%= f.text_field :nickname%>
-	</div>
-
-    <div class="field">都道府県<br>
-        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '選択して下さい' %>
-    </div>
-
-
-
-	<div>
-		<h5>自己紹介</h5>
-		<%= f.text_area :user_introduction %>
-	</div>
-
-
-
-
-	<%= f.submit '確定'%>
-	<% end %>
+<%= render 'users/list' %>
+</body>
