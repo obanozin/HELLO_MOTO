@@ -19,7 +19,10 @@
     position: absolute;
     top: 30px;
     left: 100px;
+    text-decoration: none;
+    color:white;
 }
+/*sign in*/
 .new-body {
     margin: auto;
     width: 700px;
@@ -47,7 +50,7 @@
     text-decoration: none;
     font-size: 16px;
     position: absolute;
-    left: 910px;
+    left: 940px;
     top: 45px;
     border-bottom: solid 1px white;
 }
@@ -348,13 +351,13 @@
 .footer {
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "Yu Gothic", YuGothic, Arial, "メイリオ", Meiryo, sans-serif;
-    /* font: 100%/1.5 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Verdana, メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; */
     text-decoration: none;
     font-size: 16px;
     position: absolute;
     left: 550px;
     bottom: 81px;
 }
+/*編集画面*/
 .profile-main-edit {
     opacity: 0.95;
     width: 667px;

@@ -2,7 +2,8 @@ class TouringMembersController < ApplicationController
   before_action :set_touring_member, only: [:show, :edit, :update, :destroy]
 
   def index
-    @touring_members = TouringMember.all
+    @touring = Touring.find(params[:touring_id])
+    @touring_members = @touring.touring_members
   end
 
   def create

@@ -1,14 +1,33 @@
+<body class="team-back">
+  <%= render 'users/header' %>
 
-<h1>チーム一覧</h1> <%= link_to "新規クラブ・チーム作成",  new_team_path %>
 
-  <tbody>
-    <% @teams.each do |team| %>
+  <h1>チーム一覧</h1> <%= link_to "新規クラブ・チーム作成",  new_team_path %>
 
-    <div>
-      <p>チーム名 : <%= link_to team.team_name, team_path(team.id) %></p>
-      <p>リーダー : <%= team.user.nickname %></p>
-      <p>活動地域 : <%= team.user.prefecture.name %></p>
-      <p>チーム紹介 : <%= team.team_introduction %></p>
-    </div>
-    <% end %>
-    <%= paginate @teams %>
+    <tbody>
+      <% @teams.each do |team| %>
+
+      <div class="teams-index-main">
+        <div><%= attachment_image_tag team, :team_image, :fill, 200,  200,size: 'autoxauto', class: "team-index-image"  %></div>
+        <div class="team-index-text">
+          <p class="team-name-box-index">
+            <%= link_to team.team_name, team_path(team.id), class: "team-name-index" %>
+          </p>
+          <div class="index-led-reg">
+            <p class="index-led">リーダー : <%= team.user.nickname %></p>
+            <p class="index-reg">活動地域 : <%= team.user.prefecture.name %></p>
+          </div>
+          <div class="index-app-age">
+            <p class="index-app">メンバー数:<%= team.team_members.approval.size %>人</p>
+            <p class="index-age">年齢層:<%= team.age_range %></p>
+          </div>
+          <div class="team-intro-box">
+            <p class="team-intro">チーム紹介 : <br><%= team.team_introduction %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <%= paginate @teams %>
+    </tbody>
+      <%= render 'users/footer' %>
+</body>

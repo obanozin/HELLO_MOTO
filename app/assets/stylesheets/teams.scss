@@ -1,3 +1,91 @@
 // Place all the styles related to the Teams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.team-back{
+    background-image: url(IMG_20190312_171354.jpg);
+    width: 1440px;
+    height: 1230px;
+    background-size: cover;
+    background-position: bottom;
+    padding-top: 100px;
+    position: relative;
+}
+.teams-index-main {
+    opacity: 0.95;
+    width: 60%;
+    height: auto;
+    margin: auto;
+    background-color: white;
+    /* padding-top: 75px; */
+    border-radius: 18px;
+    box-shadow: -1px 1px 10px 10px rgba(55, 152, 149, 0.24);
+    position: relative;
+    /* margin-top: 130px; */
+}
+.team-index-image{
+	position: absolute;
+	border-radius: 18px;
+}
+.team-index-text{
+	text-align: center;
+	margin-top: 30px;
+	height: 200px;
+}
+.team-name-box-index {
+    width: 200px;
+    margin: auto;
+    padding-left: 160px;
+    padding-top: 18px;
+}
+.team-name-index{
+	text-decoration: none;
+	color: black;
+	font-size: 18px
+}
+.index-led-reg{
+	width: 100%;
+	height: auto;
+}
+.index-led {
+    width: 50%;
+    display: inline;
+    /* text-align: right; */
+    margin-left: 260px;
+}
+.index-reg{
+	width: 50%;
+	float: right;
+	margin: 0;
+
+}
+.index-app-age {
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+}
+.index-app{
+    width: 50%;
+    display: inline;
+    /* text-align: right; */
+    margin-left: 260px;
+}
+.index-age{
+	width: 50%;
+	float: right;
+	margin: 0;
+
+}
+.team-intro-box{
+  overflow: hidden;
+  width: 100%;
+}
+.team-intro {
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* margin: auto; */
+    padding: 0px 22px 30px;
+    margin-left: 235px;
+}
