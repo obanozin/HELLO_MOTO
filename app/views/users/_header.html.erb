@@ -1,0 +1,7 @@
+  <div class="header-main">
+    <%= link_to "HELLO MOTO", user_path(current_user.id), class: "logo" %>
+    <%= link_to "新しいチームを見つけに行こう", teams_path, class: "header-link-japan" %>
+    <%= link_to "所属チーム一覧へ", "/users/#{current_user.id}/myteam",class: "header-link-japan-2" %>
+    <%= link_to  "ログアウト", destroy_user_session_path, method: :delete, class: "header-link-japan-3" %>
+
+  </div>

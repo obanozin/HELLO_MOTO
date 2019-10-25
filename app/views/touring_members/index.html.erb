@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Touring Members</h1>
 
@@ -12,9 +11,9 @@
   <tbody>
     <% @touring_members.each do |touring_member| %>
       <tr>
-        <td><%= link_to 'Show', touring_member %></td>
-        <td><%= link_to 'Edit', edit_touring_member_path(touring_member) %></td>
-        <td><%= link_to 'Destroy', touring_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= touring_member.user.nickname %></td>
+        <td></td>
+        <td></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +21,3 @@
 
 <br>
 
-<%= link_to 'New Touring Member', new_touring_member_path %>

@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
 
-  PER = 6
+  PER = 4
   def index
     @teams = Team.page(params[:page]).per(PER).order(id: "DESC")
   end

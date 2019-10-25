@@ -1,11 +1,5 @@
 <body class="my-page-back">
-  <header class="header-main">
-    <a class="logo">HELLO MOTO</a>
-    <%= link_to "新しいチームを見つけに", teams_path, class: "header-link-japan" %>
-    <%= link_to "所属チーム一覧へ", "/users/#{current_user.id}/myteam",class: "header-link-japan-2" %>
-    <%= link_to  "ログアウト", destroy_user_session_path, method: :delete, class: "header-link-japan-3" %>
-
-  </header>
+  <%= render 'users/header' %>
     <div class="profile-main-edit">
 	ユーザー編集
 
@@ -45,5 +39,5 @@
 
 		
 	</div>
-<%= render 'users/list' %>
+<%= render 'users/footer' %>
 </body>
