@@ -19,17 +19,18 @@
 				<div class="intro-text">紹介文:</div><br>
 				<div class="intro-text-main"><%= @team.team_introduction %></div>
 			</div>
+            <div class="link_box-team">
+				<%= link_to "メンバー一覧", team_team_members_path(@team.id),class: "back-link-team"  %>
+				<%= link_to "ツーリング一覧", team_tourings_path(@team.id),class: "back-link-team"  %>
 
-			<%= link_to "メンバー一覧", team_team_members_path(@team.id) %>
-			<%= link_to "ツーリング一覧", team_tourings_path(@team.id) %>
 
-
-			<%= link_to 'Back', teams_path %>
 			<% if @team.user == current_user  %>
-			    <%= link_to "申請一覧", team_people_path(@team.id) %>
-			    <div>保留数:<%= @team.team_members.hold.size %>人</div>
-		    	<%= link_to "チーム編集", edit_team_path(@team) %>
-				<%= link_to "delete", team_path(@team.id), method: :delete, "data-confirm" => "本当に消しますか？消去したチームデータは元に戻せません。" %>
+
+				    <%= link_to "申請一覧", team_people_path(@team.id),class: "back-link-team"  %>
+				    <div>保留数:<%= @team.team_members.hold.size %>人</div>
+			    	<%= link_to "チーム編集", edit_team_path(@team),class: "back-link"  %>
+					<%= link_to "delete", team_path(@team.id), method: :delete, "data-confirm" => "本当に消しますか？消去したチームデータは元に戻せません。",class: "back-link"  %>
+				</div>
 			<% end %>
 			<div class="border-moto-info"></div>
 			<div class="team-chat-box">
@@ -62,7 +63,7 @@
 
 			<div class="team-member-count">メンバー　<%= @team.team_members.approval.size %>人</div>
 			<div class="add-link-box">
-			　　　　<%= link_to "参加申請", new_team_team_member_path(@team.id),class: "back-link"  %>
+			　　　　<%= link_to "参加申請", new_team_team_member_path(@team.id),class: "back-link-team"  %>
 		    </div>
 
 
