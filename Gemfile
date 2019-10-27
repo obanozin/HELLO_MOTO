@@ -71,3 +71,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari', '~> 0.17.0'
 
+group :production do
+    gem 'mysql2'
+  end
+
