@@ -1,3 +1,30 @@
 // Place all the styles related to the Tourings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.touring-back {
+    background-image: url(IMG_20190316_161631.jpg);
+    width: 1440px;
+    height: auto;
+    background-size: cover;
+    background-position: bottom;
+    padding-top: 100px;
+    position: relative;
+    padding-bottom: 130px;
+}
+.touring-top-image {
+    border-radius: 49px;
+    position: absolute;
+    left: 350px;
+    top: -100px;
+    border: solid white 1px;
+}
+.touring-box{
+	text-align: center;
+}
+.touring-add{
+	color: #34acb3;
+
+}
+.touring-des{
+	color: red;
+}

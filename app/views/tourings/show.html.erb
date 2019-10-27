@@ -1,86 +1,93 @@
-<%= attachment_image_tag @tourings, :touring_image, :fill, 60,  60 ,fallback: "no_image.jpg",size: '150x150' %><br>
-<p><%= @tourings.touring_name %></p><br>
-<p><%= @tourings.team.team_name %></p><br>
-<p>行き先:<%= @tourings.destination %></p><br>
-<p>日にち、待ち合わせ時間:<%= @tourings.touring_date %></p><br>
-<p>詳細:<%= @tourings.touring_detail %></p><br>
-<p>責任者:<%= @tourings.user.nickname %></p><br>
-<%= @tourings.meet %>
-<% unless TouringMember.is_member?(@tourings, current_user) %>
-	<%= link_to "参加する", team_touring_touring_members_path(@tourings.team, @tourings), method: :POST %>
-	<% else  %>
-	<%= link_to "参加取り消し", team_touring_touring_member_path(@tourings.team, @tourings, @touring_member), method: :DELETE %>
-<% end %>
-
-<%= link_to "一覧へ戻る", team_tourings_path(@tourings.team_id) %>
-<%= link_to "編集する",  edit_team_touring_path(@tourings.team_id) %>
-
-
-<p>メンバー一覧</p>
-<%= link_to "メンバー一覧",team_touring_touring_members_path(@tourings.team, @tourings) %>
-
-<h1>Chat room</h1>
-
-<form>
-  <label>Say something:</label><br>
-  <input type="text" data-behavior="room_touring_speaker">
-</form>
+<div class="touring-back">
+    <%= render 'users/header' %>
+  <div class="team-main">
+  <%= attachment_image_tag @tourings, :touring_image, :fill, 60,  60 ,fallback: "no_image.jpg",size: '150x150',class: "touring-top-image "  %><br>
+  <p class="team-page-name"><%= @tourings.touring_name %></p><br>
+  <div class="touring-box">
+    <p><%= @tourings.team.team_name %></p><br>
+    <p>行き先:<%= @tourings.destination %></p><br>
+    <p>日にち、待ち合わせ時間:<%= @tourings.touring_date %></p><br>
+    <p>詳細:<%= @tourings.touring_detail %></p><br>
+    <p>責任者:<%= @tourings.user.nickname %></p><br>
+    <%= @tourings.meet %>
+    <% unless TouringMember.is_member?(@tourings, current_user) %>
+    	<%= link_to "参加する", team_touring_touring_members_path(@tourings.team, @tourings), method: :POST,class: "touring-add" %>
+    	<% else  %>
+    	<%= link_to "参加取り消し", team_touring_touring_member_path(@tourings.team, @tourings, @touring_member), method: :DELETE,class: "touring-des " %>
+    <% end %>
 
 
-<div id='message_tourings' data-touring_id="<%= @tourings.id %>">
-  <%= render @messages %>
+  <%= link_to "一覧へ戻る", team_tourings_path(@tourings.team_id) %>
+  <%= link_to "編集する",  edit_team_touring_path(@tourings.team_id) %>
+
+
+  <%= link_to "メンバー一覧",team_touring_touring_members_path(@tourings.team, @tourings) %>
+    </div>
+
+  <h2>gmap</h2>
+
+
+  <div id='map'>
+  </div>
+
+  <style>
+  #map{
+    height: 400px;
+    width: 500px;
+  }
+  </style>
+
+  <script>
+
+
+  let map
+  let geocoder
+
+  function initMap(){
+    geocoder = new google.maps.Geocoder()
+
+    map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+    });
+
+    codeAddress();
+  }
+  function codeAddress(){
+    // 入力を取得
+    let inputAddress = "<%= @tourings.meet %>"
+
+    // geocodingしたあとmapを移動
+    geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+      if (status == 'OK') {
+  　　　　　　　　　　　　// map.setCenterで地図が移動
+        map.setCenter(results[0].geometry.location);
+
+  　　　　　　　　　　　　// google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLbShDmm__a_FMdqz1EXGpl8ZvKxMKMws&callback=initMap" async defer></script>
+
+  <h1>Chat room</h1>
+
+  <form>
+    <label>Say something:</label><br>
+    <input type="text" data-behavior="room_touring_speaker">
+  </form>
+
+
+  <div id='message_tourings' data-touring_id="<%= @tourings.id %>">
+    <%= render @messages %>
+  </div>
+  </div>
+      <%= render 'users/footer' %>
 </div>
-
-
-<h2>gmap</h2>
-
-
-<div id='map'>
-</div>
-
-<style>
-#map{
-  height: 400px;
-  width: 500px;
-}
-</style>
-
-<script>
-
-
-let map
-let geocoder
-
-function initMap(){
-  geocoder = new google.maps.Geocoder()
-
-  map = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: -34.397, lng: 150.644},
-  zoom: 8
-  });
-
-  codeAddress();
-}
-function codeAddress(){
-  // 入力を取得
-  let inputAddress = "<%= @tourings.meet %>"
-
-  // geocodingしたあとmapを移動
-  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-    if (status == 'OK') {
-　　　　　　　　　　　　// map.setCenterで地図が移動
-      map.setCenter(results[0].geometry.location);
-
-　　　　　　　　　　　　// google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
-      var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-      });
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLbShDmm__a_FMdqz1EXGpl8ZvKxMKMws&callback=initMap" async defer></script>
-
+    <%= render 'users/footer' %>
