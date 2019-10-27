@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2019_10_24_163228) do
   end
 
   create_table "entries", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "room_id"
+    t.bigint "user_id"
+    t.bigint "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["room_id"], name: "index_entries_on_room_id"
