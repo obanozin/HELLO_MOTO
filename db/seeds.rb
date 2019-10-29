@@ -8,4 +8,4 @@
 
 
 
-Admin.create(:email => 'First@gmail.com', :password => 'testpass' )
+Admin.create(:email => 'First@gmail.com', :password => '' )
