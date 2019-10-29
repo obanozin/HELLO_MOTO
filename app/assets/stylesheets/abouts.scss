@@ -1,0 +1,37 @@
+// Place all the styles related to the about controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.about-body {
+    margin: auto;
+    width: 100%;
+    background-color: #103a6f;
+    float: left;
+    height: 863px;
+    opacity: 0.8;
+    box-shadow: -1px 1px 10px 10px #142935;
+    color: white;
+}
+
+
+.about-box{
+	text-align: center;
+	margin-top: 130px;
+}
+
+.about-text-top{
+    margin-top: 30px;
+}
+.about-text-second{
+    margin-top: 60px;
+}
+.about-text-third{
+    margin-top: 60px;
+}
+.about-text-four{
+    margin-top: 60px;
+}
+.about-text-last{
+    margin-top: 60px;
+}
