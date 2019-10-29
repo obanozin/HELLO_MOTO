@@ -31,12 +31,13 @@ class TeamMembersController < ApplicationController
   # POST /team_members
   # POST /team_members.json
   def create
+    @team = Team.find(params[:team_id])
     @team_member = TeamMember.new(team_member_params)
     @team_member.user_id = current_user.id
     if @team_member.save
-        redirect_to user_path(current_user)
+        redirect_to team_path(@team), alert: "申請を送信しました！チームのページからリーダーのページに行き、メッセージを送ってみよう！"
     else
-        redirect_to teams_path
+        redirect_to team_path(@team), alert: "すでに申請を送信しております。少々お待ちください。"
     end
   end
 

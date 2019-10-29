@@ -1,4 +1,9 @@
 <body class="team-page-back">
+  <% if flash[:alert] %>
+    <script>alert("<%= flash[:alert] %>")</script>
+  <% end %>
+
+
 	<%= render 'users/header' %>
     <%= render 'users/footer' %>
 
