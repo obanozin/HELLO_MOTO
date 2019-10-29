@@ -89,7 +89,7 @@
 }
 
 .main-visual {
-    background-image: url(IMG_20181130_135829.jpg);
+    background-image: image-url('IMG_20181130_135829.jpg');
     width: 1440px;
     height: 863px;
     background-size: cover;
@@ -229,7 +229,7 @@
 }
 /*マイページ*/
 .my-page-back {
-    background-image: url(IMG_20181129_082114.jpg);
+    background-image: image-url('IMG_20181129_082114.jpg');
     width: 1440px;
     height: 763px;
     background-size: cover;
