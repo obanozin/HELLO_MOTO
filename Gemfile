@@ -74,4 +74,4 @@ gem 'kaminari', '~> 0.17.0'
 group :production do
     gem 'mysql2'
   end
-
+gem 'listen', '>= 3.0.5', '< 3.2'
