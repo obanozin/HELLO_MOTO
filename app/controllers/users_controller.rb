@@ -31,10 +31,7 @@ class UsersController < ApplicationController
 
 	end
 	def cancel
-		@user = User.find(params[:id])
-	  if @user.id != current_user.id
-	     redirect_to user_path(current_user)
-	 end
+		@user = current_user
 	end
 
 
