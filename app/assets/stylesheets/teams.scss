@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .team-back{
-    background-image: url(IMG_20190312_171354.jpg);
+    background-image: image-url('IMG_20190312_171354.jpg');
     width: 100%;
     height: 1230px;
     background-size: cover;
@@ -107,7 +107,7 @@
 
 /*show page*/
 .team-page-back {
-    background-image: url(IMG_20190312_171354.jpg);
+    background-image: image-url('IMG_20190312_171354.jpg');
     width: 100%;
     height: 100%;
     background-size: cover;
