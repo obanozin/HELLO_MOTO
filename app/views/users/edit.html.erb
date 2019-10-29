@@ -35,7 +35,8 @@
 
 		<%= f.submit '確定'%>
 		<% end %>
-		<%= link_to "マイページへ戻る", user_path(current_user), class: "back_to_mypage" %>
+		<%= link_to "マイページへ戻る", user_path(current_user), class: "back_to_mypage" %><br>
+		<%= link_to "退会する", cancel_path, class: "back_to_mypage" %>
 
 		
 	</div>

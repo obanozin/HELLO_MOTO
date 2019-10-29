@@ -8,7 +8,8 @@
 			<div class="team-page-name"><%= @team.team_name %></div>
 			<div class="name-border"></div>
 			<div class="team-le-re">
-				<div class="team-leader">リーダー:<%= @team.user.nickname %></div>
+
+                <%= link_to @team.user.nickname , user_path(@team.user.id),class: "team-leader"  %>
 				<div class="team-region">活動地域:<%= @team.user.prefecture.name %></div>
 		    </div>
 		    <div class="team-member-count">メンバー　<%= @team.team_members.approval.size %>人</div>
@@ -50,7 +51,7 @@
 			<% else %>
 			<div class="team-page-name"><%= @team.team_name %></div>
 			<div class="team-le-re">
-				<div class="team-leader">リーダー:<%= @team.user.nickname %></div>
+				<%= link_to @team.user.nickname , user_path(@team.user.id),class: "team-leader"  %>
 				<div class="team-region">活動地域:<%= @team.user.prefecture.name %></div>
 		    </div>
 		    <div class="team-age-box">
