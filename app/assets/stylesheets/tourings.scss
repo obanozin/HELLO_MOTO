@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .touring-back {
-    background-image: url(IMG_20190316_161631.jpg);
+    background-image: image-url('IMG_20190316_161631.jpg');
     width: 1440px;
     height: auto;
     background-size: cover;
@@ -19,12 +19,12 @@
     border: solid white 1px;
 }
 .touring-box{
-	text-align: center;
+        text-align: center;
 }
 .touring-add{
-	color: #34acb3;
+        color: #34acb3;
 
 }
 .touring-des{
-	color: red;
+        color: red;
 }
