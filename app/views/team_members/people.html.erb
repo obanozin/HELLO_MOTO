@@ -1,22 +1,32 @@
-<h1>申請一覧</h1>
+<body class="my-team-member-back">
 
-<table>
-  <thead>
-    <tr>
-      <th>申請者</th>
-      <th>申請コメント</th>
-    </tr>
+  <%= render 'users/header' %>
+  <%= render 'users/footer' %>
+  <div class="team_member-main">
 
-  </thead>
 
-  <tbody>
-    <% @team_members.each do |team_member| %>
-      <tr>
-        <td><%= team_member.user.nickname %></td>
-        <td><%= team_member.request_comment %></td>
-        <td><%= link_to "承認", team_team_member_path(@team, team_member), method: :patch  %></td>
-        <td><%= link_to "削除", team_team_member_path(@team, team_member), method: :delete %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <h1>申請一覧</h1>
+
+    <table class="myteam-th">
+      <thead>
+        <tr>
+          <th>申請者</th>
+          <th>申請コメント</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+        <% @team_members.each do |team_member| %>
+          <tr>
+            <td><%= team_member.user.nickname %></td>
+            <td><%= team_member.request_comment %></td>
+            <td><%= link_to "承認", team_team_member_path(@team, team_member), method: :patch  %></td>
+            <td><%= link_to "削除", team_team_member_path(@team, team_member), method: :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to "戻る", team_path(@team.id), class: "back-link" %>
+  </div>
+</body>

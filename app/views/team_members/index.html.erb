@@ -1,18 +1,26 @@
-<h1>メンバー一覧</h1>
+<body class="my-team-member-back">
 
-<table>
-  <thead>
-    <tr>
-      <th>メンバー</th>
-    </tr>
+  <%= render 'users/header' %>
+  <%= render 'users/footer' %>
+  <div class="team_member-main">
+      <h1>メンバー一覧</h1>
 
-  </thead>
+      <table class="myteam-th">
+        <thead>
+          <tr>
+            <th>メンバー</th>
+          </tr>
 
-  <tbody>
-    <% @team_members.each do |team_member| %>
-      <tr>
-        <td><%= team_member.user.nickname %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        </thead>
+
+        <tbody>
+          <% @team_members.each do |team_member| %>
+            <tr>
+              <td><%= team_member.user.nickname %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <%= link_to "戻る", team_path(@team.id), class: "back-link" %>
+  </div>
+</body>
