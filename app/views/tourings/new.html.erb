@@ -1,17 +1,24 @@
-<h1>New Touring</h1>
+<div class="touring-back">
+    <%= render 'users/header' %>
+    <%= render 'users/footer' %>
+  <div class="team-main">
 
-<%= form_for([@team,@touring]) do |f| %>
-	<div>
-		<%= f.hidden_field :team_id, :value => @team.id %>
-	</div>
-    <div>
-    	<h5>ツーリング名</h5>
-		<%= f.text_field :touring_name %>
-	</div>
-    <div>
-    	<h5>待ち合わせ場所</h5>
-    	<%= f.text_field :meet %>
-    </div>
+		<h1>New Touring</h1>
 
-	<%= f.submit %>
-<% end %>
+		<%= form_for([@team,@touring]) do |f| %>
+			<div>
+				<%= f.hidden_field :team_id, :value => @team.id %>
+			</div>
+		    <div>
+		    	<h5>ツーリング名</h5>
+				<%= f.text_field :touring_name %>
+			</div>
+		    <div>
+		    	<h5>待ち合わせ場所</h5>
+		    	<%= f.text_field :meet %>
+		    </div>
+
+			<%= f.submit %>
+		<% end %>
+	</div>
+</div>
