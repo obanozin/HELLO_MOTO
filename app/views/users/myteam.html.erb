@@ -1,18 +1,46 @@
-<h4>所属チーム一覧</h4>
-<table>
-  <thead>
-    <tr>
-      <th>チーム名</th>
-    </tr>
 
-  </thead>
+<div class="my-page-back">
 
-  <tbody>
-    <% @myteam.each do |myteam| %>
-      <tr>
-        <td><%= link_to myteam.team.team_name, team_path(myteam.team) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to "戻る", :back %>
+  <%= render 'users/header' %>
+  <%= render 'users/footer' %>
+  <div class="motoinfo-main">
+
+    <h4>所属チーム一覧</h4>
+    <table class="myteam-th">
+      <thead>
+        <tr>
+          <th>チーム名</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+        <% @myteam.each do |myteam| %>
+          <tr>
+            <td><%= link_to myteam.team.team_name, team_path(myteam.team), class: "moto-info-add"  %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+    <h4>申請保留中</h4>
+    <table class="myteam-th">
+      <thead>
+        <tr>
+          <th>チーム名</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+        <% @myteams.each do |myteams| %>
+          <tr>
+            <td><%= link_to myteams.team.team_name, team_path(myteams.team), class: "moto-info-add"  %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to "戻る", :back, class: "moto-info-add"  %>
+  </div>
+</div>

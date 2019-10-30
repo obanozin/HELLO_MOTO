@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 	def myteam
 		@user = User.find(params[:id])
 		@myteam = @user.team_members.approval
+		@myteams = @user.team_members.hold
 
 	end
 	def cancel
