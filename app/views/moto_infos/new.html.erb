@@ -1,5 +1,10 @@
-<h1>New Moto Info</h1>
 
-<%= render 'form', moto_info: @moto_info %>
+<div class="my-page-back ">
+	<div class="motoinfo-main">
+		<div>新しいバイク情報を追加</div>
 
-<%= link_to 'Back', user_path(current_user) %>
+		<%= render 'form', moto_info: @moto_info %>
+
+		<%= link_to 'Back', user_path(current_user), class: "moto-info-add" %>
+    </div>
+</div>
