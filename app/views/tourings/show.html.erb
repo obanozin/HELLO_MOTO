@@ -7,7 +7,7 @@
     <p><%= @tourings.team.team_name %></p><br>
     <p>行き先:<%= @tourings.destination %></p><br>
     <p>日にち、待ち合わせ時間:<%= @tourings.touring_date %></p><br>
-    <p>詳細:<%= @tourings.touring_detail %></p><br>
+    <p>詳細:<br><%= @tourings.touring_detail %></p><br>
     <p>責任者:<%= @tourings.user.nickname %></p><br>
     <%= @tourings.meet %>
     <% unless TouringMember.is_member?(@tourings, current_user) %>

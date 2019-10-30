@@ -71,7 +71,9 @@ class TouringsController < ApplicationController
     @team = Team.find(params[:team_id])
     @tourings = Touring.find(params[:id])
     @tourings.update(touring_params)
-    redirect_to team_touring_path(@tourings)
+    redirect_to team_touring_path(team_id: @team.id, id: @tourings.id)
+
+
   end
 
   # DELETE /tourings/1
