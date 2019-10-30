@@ -1,31 +1,37 @@
+<div class="touring-back-index">
+  <%= render 'users/header' %>
+  <%= render 'users/footer' %>
+  <div class="team-main">
+    <div class="touring-index-box">
+      <h1>ツーリング</h1>
+       <%= link_to "新しい予定を作成",new_team_touring_path(@team),class: "back-link"  %>
+
+      <table class="myteam-th">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @tourings.each do |touring| %>
+            <tr>
+              <td><%= touring.touring_name  %></td>
+              <td><%= touring.touring_date  %></td>
+              <td><%= touring.destination  %></td>
+              <td><%= link_to "詳細", team_touring_path(@team,touring.id),class: "back-link"  %></td>
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
 
 
-<h1>ツーリング</h1>
- <%= link_to "新しい予定を作成",new_team_touring_path(@team) %>
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tourings.each do |touring| %>
-      <tr>
-        <td><%= touring.touring_name  %></td>
-        <td><%= touring.touring_date  %></td>
-        <td><%= touring.destination  %></td>
-        <td><%= link_to "詳細", team_touring_path(@team,touring.id) %></td>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-
-<%= link_to 'チームページに戻る', team_path(@team) %>
+      <%= link_to 'チームページに戻る', team_path(@team),class: "back-link"  %>
+    </div>
+  </div>
+</div>
