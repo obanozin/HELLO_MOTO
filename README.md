@@ -1,7 +1,7 @@
 # README
 
 # HELLO MOTO
-## HELLO MOTOとは
+### HELLO MOTOとは
 
 バイクのツーリングクラブ、チームの管理を簡単にするアプリケーションです。
 
