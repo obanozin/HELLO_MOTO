@@ -56,7 +56,9 @@
       </div>
     </div>
     <div class="log-out-box">
-      <%= button_to "ログアウト", destroy_user_session_path, method: :delete,class: "my_logout_btn" %>
+      <%= link_to  destroy_user_session_path, method: :delete,class: "my_logout_btn" do %>
+        <i class="fas fa-sign-out-alt">ログアウト</i>
+      <% end %>
     </div>
   </div>
   <% else %>

@@ -281,9 +281,7 @@
     position: absolute;
     right: 92px;
     margin-top: -13px;
-    border: solid 1px #36e9f3;
     color: #34acb3;
-    border-radius: 12px;
     font-size: 15px;
     text-align: center;
     text-decoration: none;
@@ -296,8 +294,6 @@
     width: 100%;
     height: auto;
     text-align: center;
-    border: solid 1px #36e9f3;
-    border-radius: 12px;
     width: 100px;
     margin:10px auto 0;
 }
@@ -347,9 +343,7 @@
     height: 28px;
     right: 92px;
     margin-top: -13px;
-    border: solid 1px #36e9f3;
     color: #34acb3;
-    border-radius: 12px;
     font-size: 15px;
     margin: 25px 0 30px 285px;
 }
@@ -366,11 +360,13 @@
     color: #34acb3;
     padding-left: 10px;
     border-radius: 12px;
-        border: solid 1px #36e9f3;
+    border: solid 1px #36e9f3;
 }
 .log-out-box{
     width: 100%;
     height: auto;
+    padding-bottom: 20px;
+    margin-top: 10px;
 }
 .message-btn{
     margin-left: 30px;
