@@ -9,7 +9,10 @@
     <div class="name-border"></div>
     <% if @user == current_user %>
 
-      <%= button_to "編集", {controller: 'users', action: 'edit'}, {method: :get, class: "mypage-button"}  %>
+      <%= link_to edit_user_path , class: "mypage-button" do %>
+        <i class="fas fa-edit">編集</i>
+      <% end %>
+
     <br>
     <div class="my-region">活動地域:<%= @user.prefecture.name %></div>
     <div class="my-introduction">
@@ -47,7 +50,9 @@
         </tbody>
       </table>
       <div class="moto-info-add-box">
-          <%= link_to '車両を追加', new_moto_info_path(current_user), class: "moto-info-add" %>
+          <%= link_to new_moto_info_path(current_user), class: "moto-info-add" do %>
+            <i class="fas fa-plus-circle">車両を追加</i>
+          <% end %>
       </div>
     </div>
     <div class="log-out-box">
