@@ -2,31 +2,11 @@
 # HELLO MOTO
 
 ### HELLO MOTOとは
-バイクのツーリングクラブ、チームの管理を簡単にするアプリケーションです。
+バイクのツーリングクラブ、チームの管理を簡単にするアプリケーションです。このサイトの機能としてツーリングクラブの管理、クラブのツーリング予定の管理、個人間のリアルタイムチャット、チーム内チャット、ツーリング予定ページでのチャット、ツーリング先を表示するGoogleMapのAPIなどが入ってます
 ### 環境
-* ruby '2.5.7' rails 5.2.3
+ruby '2.5.7' rails 5.2.3
 
-### HELLO MOTOとは
+### 使い方
 
-
-バイクのツーリングクラブ、チームの管理を簡単にするアプリケーションです。
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* まず新規登録を行います。ここで洗濯した都道府県は、チーム設立の際そのチームの活動地域となります。
+* 
