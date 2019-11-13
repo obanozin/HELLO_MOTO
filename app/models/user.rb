@@ -13,6 +13,13 @@ class User < ApplicationRecord
 	has_many :message_tourings
 	validates :prefecture_id, presence: true
 
+    validates :nickname,    length: { minimum: 1 }
+    validates :nickname,    length: { maximum: 16 }
+    validates :user_name,    length: { minimum: 1 }
+    validates :user_name,    length: { maximum: 16 }
+    validates :user_introduction,    length: { maximum: 40 }
+
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

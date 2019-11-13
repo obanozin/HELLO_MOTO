@@ -8,4 +8,5 @@ class Team < ApplicationRecord
 	validates :team_name,    length: { minimum: 1 }
 	validates :team_name,    length: { maximum: 20 }
 	validates :team_introduction,    length: { maximum: 200 }
+    validates :age_range,    length: { maximum: 20 }
 end
