@@ -1,7 +1,28 @@
-  <div class="header-main">
-    <%= link_to "HELLO MOTO", user_path(current_user.id), class: "logo" %>
-    <%= link_to "新しいチームを見つけに行こう", teams_path, class: "header-link-japan" %>
-    <%= link_to "所属チーム一覧へ", "/users/#{current_user.id}/myteam",class: "header-link-japan-2" %>
-    <%= link_to  "ログアウト", destroy_user_session_path, method: :delete, class: "header-link-japan-3" %>
+<header>
+  <div class="header-main none">
+    <%= link_to "HELLO MOTO", user_path(current_user.id), class: "logo none" %>
+    <%= link_to "新しいチームを見つけに行こう", teams_path, class: "header-link-japan none" %>
+    <%= link_to "所属チーム一覧へ", "/users/#{current_user.id}/myteam",class: "header-link-japan-2 none" %>
+    <%= link_to  "ログアウト", destroy_user_session_path, method: :delete, class: "header-link-japan-3 none" %>
 
   </div>
+</header>
+
+
+<div class="header none-big">
+	<div class="header-main">
+	<%= link_to "HELLO MOTO", user_path(current_user.id), class: "logo none-big" %>
+	  <a class="nav-button" href="#">
+	    <span></span>
+	    <span></span>
+	    <span></span>
+	  </a>
+	  <nav class="nav-wrap none-big">
+	    <ul class="nav none-big">
+	      <li><%= link_to "新しいチームを見つけに行こう", teams_path,  class: "nav-bar-head none-big" %></li>
+	      <li><%= link_to "所属チーム一覧へ", "/users/#{current_user.id}/myteam", class: "nav-bar-head none-big" %></li></li>
+	      <li><%= link_to  "ログアウト", destroy_user_session_path, method: :delete, class: "nav-bar-head none-big" %></li>
+	    </ul>
+	  </nav>
+	</div>
+</div>

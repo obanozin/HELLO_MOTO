@@ -8,11 +8,8 @@
     font-family: "Helvetica Neue", Arial, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
     position: absolute;
     top: 0px;
-    /* background-color: #5ba0df; */
     width: 100%;
     height: 120px;
-    /* opacity: 0.8; */
-    /* box-shadow: -1px 1px 10px 10px #2bc7d0; */
 }
 .logo {
     /* padding-left: 100pc; */
@@ -87,6 +84,7 @@
     top: 45px;
     border-bottom: solid 1px white;
 }
+
 
 .main-visual {
     background-image: image-url('IMG_20181130_135829.jpg');
@@ -405,3 +403,192 @@
     width: 300px;
     margin: auto;
 }
+
+@media screen and (max-width:425px) {
+    .none {
+        display:none
+    }
+
+    .my-page-back {
+      background-image: image-url('IMG_20181129_082114.jpg');
+      width: 100%;
+      height: 763px;
+      background-size: cover;
+      background-position: bottom;
+      padding-top: 100px;
+      position: relative;
+    }
+    .profile-main {
+      opacity: 0.95;
+      width: 80%;
+      height: auto;
+      margin: auto;
+      background-color: white;
+      padding-top: 75px;
+      border-radius: 38px;
+      box-shadow: -1px 1px 10px 10px rgba(55, 152, 149, 0.24);
+      position: relative;
+      margin-top: 130px;
+    }
+    .top_image{
+      left:100px;
+    }
+
+/*ハンバーガーメニュー*/
+    .footer{
+        left: 50px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      background: #ddd;
+
+      .logo {
+        font-size: 20px;
+      }
+    }
+    .nav-button {
+      display: none;
+    }
+    .nav {
+      a {
+        color: #000;
+        text-decoration: none;
+        font-size: 14px;
+        color: #448aff;
+      }
+      li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+    }
+    .nav-wrap.open {
+      display: block;
+    }
+    .nav-wrap.close {
+      display: none;
+    }
+      .nav-button {
+        display: block;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      .nav-wrap {
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: none;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 100%;
+        .nav {
+          height: 100%;
+          position: relative;
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+        li {
+          display: block;
+          margin: 2em;
+          a {
+            color: #fff;
+            font-size: 18px;
+          }
+        }
+      }
+      /*メニューボタン*/
+      .nav-button,
+      .nav-button span {
+        display: inline-block;
+        transition: all 0.4s;
+        box-sizing: border-box;
+        left: 20px;
+      }
+      .nav-button {
+        z-index: 20;
+        position: relative;
+        width: 40px;
+        height: 36px;
+      }
+      .nav-button span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 4px;
+      }
+      .nav-button span:nth-of-type(1) {
+        top: 0;
+      }
+      .nav-button span:nth-of-type(2) {
+        top: 16px;
+      }
+      .nav-button span:nth-of-type(3) {
+        bottom: 0;
+      }
+      .nav-button.active span:nth-of-type(1) {
+        -webkit-transform: translateY(16px) rotate(-45deg);
+        transform: translateY(16px) rotate(-45deg);
+      }
+      .nav-button.active span:nth-of-type(2) {
+        opacity: 0;
+      }
+      .nav-button.active span:nth-of-type(3) {
+        -webkit-transform: translateY(-16px) rotate(45deg);
+        transform: translateY(-16px) rotate(45deg);
+      }
+      .my-introduction {
+        margin: auto;
+        width: 100%;
+      }
+      .border-moto-info {
+        margin: auto;
+        border-bottom: solid 1px #969696;
+        width: 80%;
+        margin-top: 27px;
+      }
+      .moto-info {
+        width: 100%;
+        margin: 0 auto;
+      }
+      .mypage-button {
+        width: 100px;
+        height: 28px;
+        position: absolute;
+        right: 7px;
+        margin-top: -13px;
+        color: #34acb3;
+        font-size: 15px;
+        text-align: center;
+        text-decoration: none;
+        top: 47px;
+      }
+      .log-out-box {
+        width: 100%;
+        height: auto;
+        padding-bottom: 20px;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .my_logout_btn {
+        width: 100px;
+        height: 28px;
+        right: 92px;
+        margin-top: -13px;
+        color: #34acb3;
+        font-size: 15px;
+        margin: unset;
+      }
+}
+    @media screen and (min-width: 426px) {
+      .none-big{
+        display: none;
+      }
+    }
+
+
+
+
+
