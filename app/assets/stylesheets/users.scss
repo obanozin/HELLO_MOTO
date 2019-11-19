@@ -433,6 +433,45 @@
     .top_image{
       left:91px;
     }
+    /*ログイン画面*/
+    .new-body {
+      margin: auto;
+      width: 100%;
+      background-color: #103a6f;
+      float: right;
+      height: 863px;
+      opacity: 0.8;
+      box-shadow: -1px 1px 10px 10px #142935;
+    }
+    .logo-in {
+      /* padding-left: 100pc; */
+      position: absolute;
+      top: 30px;
+      /* left: 100px; */
+      left: 90px;
+      text-decoration: none;
+      color: white;
+      font-size: 38px;
+      font-family: "Helvetica Neue", Arial, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    }
+    .new-body-up {
+      margin: auto;
+      width: 100%;
+      background-color: #103a6f;
+      float: left;
+      height: 863px;
+      opacity: 0.8;
+      box-shadow: -1px 1px 10px 10px #142935;
+    }
+    .logo-up {
+      position: absolute;
+      top: 30px;
+      right: 92px;
+      text-decoration: none;
+      color: white;
+      font-size: 38px;
+      font-family: "Helvetica Neue", Arial, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    }
 
 /*ハンバーガーメニュー*/
     .footer{
