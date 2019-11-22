@@ -201,3 +201,60 @@
     color: #34acb3;
     text-decoration: none;
 }
+
+
+
+
+
+
+@media screen and (max-width:425px) {
+/*チーム一覧*/
+    .team-index-add {
+        width: 300px;
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "Yu Gothic", YuGothic, Arial, "メイリオ", Meiryo, sans-serif;
+        margin: auto;
+    }
+    .pagination {
+        color: white;
+        text-decoration: none;
+        width: 300px;
+        margin: 20px auto 0;
+        text-align: center;
+    }
+    .teams-index-main {
+        opacity: 0.95;
+        width: 95%;
+        height: auto;
+        margin: auto;
+        background-color: white;
+        border-radius: 18px;
+        box-shadow: -1px 1px 10px 10px rgba(55, 152, 149, 0.24);
+        position: relative;
+    }
+    .team-name-box-index {
+        margin: auto;
+        padding-left: 160px;
+    }
+    .index-led {
+        width: 50%;
+        display: inline;
+        margin-left: 205px;
+    }
+    .team-intro-box {
+        width: 100%;
+    }
+    .team-intro {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 0px 22px 30px;
+        margin-left: 235px;
+        width: auto;
+    }
+    .index-app {
+        width: 50%;
+        display: inline;
+        margin-left: 205px;
+    }
+}
