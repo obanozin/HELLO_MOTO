@@ -257,4 +257,29 @@
         display: inline;
         margin-left: 205px;
     }
+    .team-main {
+        opacity: 0.95;
+        width: 95%;
+        height: auto;
+        margin: auto;
+        background-color: white;
+        padding-top: 75px;
+        border-radius: 38px;
+        box-shadow: -1px 1px 10px 10px rgba(55,152,149,0.24);
+        position: relative;
+        margin-top: 130px;
+        border: solid 1px white;
+    }
+    .team-top-image {
+        border-radius: 49px;
+        position: absolute;
+        left: 99px;
+        top: -100px;
+        border: solid white 1px;
+    }
+    .team-member-count {
+        position: absolute;
+        right: 17px;
+        top: 117px;
+    }
 }
