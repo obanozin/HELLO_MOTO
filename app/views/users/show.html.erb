@@ -65,7 +65,7 @@
   </div>
   <% else %>
 
-  <%= link_to "メッセージを送る", room_create_path(@user.id), method:'POST',class: "message-btn" %>
+  <%= link_to "メッセージ", room_create_path(@user.id), method:'POST',class: "message-btn" %>
 
   <div class="my-region">活動地域:<%= @user.prefecture.name %></div>
     <div class="my-introduction">
