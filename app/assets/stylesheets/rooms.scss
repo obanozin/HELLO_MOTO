@@ -1,3 +1,36 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.chat-room-main {
+    opacity: 0.95;
+    width: 667px;
+    height: auto;
+    margin: auto;
+    background-color: white;
+    padding-top: 75px;
+    border-radius: 38px;
+    box-shadow: -1px 1px 10px 10px rgba(55, 152, 149, 0.24);
+    position: relative;
+    margin-top: 130px;
+    padding-bottom: 75px;
+    text-align: center;
+}
+@media screen and (max-width:425px) {
+	.chat-room-main {
+	    opacity: 0.95;
+	    width: 95%;
+	    height: auto;
+	    margin: auto;
+	    background-color: white;
+	    padding-top: 75px;
+	    border-radius: 38px;
+	    box-shadow: -1px 1px 10px 10px rgba(55, 152, 149, 0.24);
+	    position: relative;
+	    margin-top: 130px;
+	    padding-bottom: 75px;
+	    text-align: center;
+	}
+}

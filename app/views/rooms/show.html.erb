@@ -1,8 +1,14 @@
-<h1>Chat room</h1>
 
-<%= label_tag :content, 'Say something:' %>
-<%= text_field_tag :content, nil, data: { behavior: 'room_speaker' } %>
-<div id='messages' data-room_id="<%= @room.id %>">
-  <%= render @messages %>
+
+<div class="my-page-back ">
+    <%= render 'users/header' %>
+    <%= render 'users/footer' %>
+	<div class="chat-room-main">
+		<h1>チャットルーム</h1>
+		<%= label_tag :content, '何か喋ってみましょう:' %>
+		<%= text_field_tag :content, nil, data: { behavior: 'room_speaker' } %>
+		<div id='messages' data-room_id="<%= @room.id %>">
+		  <%= render @messages %>
+		</div>
+	</div>
 </div>
-
