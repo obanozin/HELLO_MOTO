@@ -1,4 +1,4 @@
-<body class="my-team-member-back">
+<body class="team-page-back">
 
   <%= render 'users/header' %>
   <%= render 'users/footer' %>
@@ -16,7 +16,7 @@
         <tbody>
           <% @team_members.each do |team_member| %>
             <tr>
-              <td><%= team_member.user.nickname %></td>
+              <td><%= link_to team_member.user.nickname , user_path(team_member.user.id),class: "member-link" %></td>
             </tr>
           <% end %>
         </tbody>
