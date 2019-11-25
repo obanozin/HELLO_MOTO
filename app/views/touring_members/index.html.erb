@@ -5,7 +5,7 @@
     <div class="touring-index-box">
     <div>Touring Members</div>
 
-    <table>
+    <table class="touring-member-th">
       <thead>
         <tr>
           <th colspan="3"></th>
@@ -15,7 +15,7 @@
       <tbody>
         <% @touring_members.each do |touring_member| %>
           <tr>
-            <td><%= touring_member.user.nickname %></td>
+            <td><%= link_to touring_member.user.nickname , user_path(touring_member.user.id),class: "member-link" %></td>
             <td></td>
             <td></td>
           </tr>
