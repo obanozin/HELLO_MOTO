@@ -11,12 +11,20 @@
     <p>責任者:<%= @tourings.user.nickname %></p><br>
     <p>待ち合わせ場所<%= @tourings.meet %></p><br>
     <% unless TouringMember.is_member?(@tourings, current_user) %>
-    	<%= link_to "参加する", team_touring_touring_members_path(@tourings.team, @tourings), method: :POST,class: "back-link" %>
-    	<% else  %>
-    	<%= link_to "参加取り消し", team_touring_touring_member_path(@tourings.team, @tourings, @touring_member), method: :DELETE,class: "touring-des " %>
+    	<%= link_to team_touring_touring_members_path(@tourings.team, @tourings), method: :POST,class: "back-link" do %>
+        <i class="fas fa-user-plus">参加する</i>
     <% end %>
-    <%= link_to "編集する",  edit_team_touring_path(@tourings.team_id),class: "back-link" %>
-    <%= link_to "メンバー一覧",team_touring_touring_members_path(@tourings.team, @tourings),class: "back-link" %>
+    	<% else  %>
+    	<%= link_to team_touring_touring_member_path(@tourings.team, @tourings, @touring_member), method: :DELETE,class: "touring-des " do %>
+        <i class="fas fa-user-minus">参加取り消し</i>
+      <% end %>
+    <% end %>
+    <%= link_to edit_team_touring_path(@tourings.team_id),class: "back-link" do %>
+       <i class="fas fa-edit">編集する</i>
+    <% end %>
+    <%= link_to team_touring_touring_members_path(@tourings.team, @tourings),class: "back-link" do %>
+       <i class="fas fa-address-book">参加メンバー</i>
+    <% end %>
     </div>
   <div class="map-touring">
     <h2>gmap</h2>

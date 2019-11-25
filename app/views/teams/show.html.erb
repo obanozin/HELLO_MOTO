@@ -34,8 +34,12 @@
 
 				    <%= link_to "申請一覧", team_people_path(@team.id),class: "back-link-team"  %>
 				    <div>保留数:<%= @team.team_members.hold.size %>人</div>
-			    	<%= link_to "チーム編集", edit_team_path(@team),class: "back-link"  %>
-					<%= link_to "delete", team_path(@team.id), method: :delete, "data-confirm" => "本当に消しますか？消去したチームデータは元に戻せません。",class: "back-link"  %>
+			    	<%= link_to edit_team_path(@team),class: "back-link"  do %>
+			    		<i class="fas fa-edit">編集</i>
+			    		<% end %>
+					<%= link_to team_path(@team.id), method: :delete, "data-confirm" => "本当に消しますか？消去したチームデータは元に戻せません。",class: "back-link" do %>
+						<i class="fas fa-trash">チームを削除</i>
+					<% end %>
 				</div>
 			<% end %>
 			<div class="border-moto-info"></div>
