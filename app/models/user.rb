@@ -17,7 +17,7 @@ class User < ApplicationRecord
     validates :nickname,    length: { maximum: 16 }
     validates :user_name,    length: { minimum: 1 }
     validates :user_name,    length: { maximum: 16 }
-    validates :user_introduction,    length: { maximum: 40 }
+    validates :user_introduction,    length: { maximum: 100 }
 
 
 
