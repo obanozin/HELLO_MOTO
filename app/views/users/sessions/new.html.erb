@@ -5,7 +5,11 @@
   <div class="new-body">
     <%= link_to "HELLO MOTO", root_path, class: "logo-in none-big" %>
     <div class="new-text-box">
-      <h2 class="log-in-title">仲間を見つけに行こう！</h2>
+      <h2 class="log-in-title">バイク仲間を見つけよう！</h2>
+      <h2 class="log-in-title">ツーリングクラブを作ろう！</h2>
+      <div class="sign-link">
+          <%= link_to "HELLO MOTOとは？", abouts_path, class:"sign-about-text" %>
+      </div>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="sign-email-box">
@@ -37,9 +41,6 @@
       </div>
       <div class="sign-link">
           <%= link_to "新規登録へ", new_user_registration_path, class:"sign-link-text" %>
-      </div>
-      <div class="sign-link">
-          <%= link_to "HELLO MOTOとは？", abouts_path, class:"sign-about-text" %>
       </div>
     </div>
   </div>
