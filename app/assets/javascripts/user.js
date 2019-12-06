@@ -1,0 +1,24 @@
+$(function(){
+	$('.header-link-japan')
+	.mouseover(function(){
+		$('.header-link-japan').fadeTo('fast',0.3);
+	})
+	.mouseout(function(){
+		$('.header-link-japan').fadeTo('fast',1);
+	});
+	$('.header-link-japan-2')
+	.mouseover(function(){
+		$('.header-link-japan-2').fadeTo('fast',0.3);
+	})
+	.mouseout(function(){
+		$('.header-link-japan-2').fadeTo('fast',1);
+	});
+	$('.header-link-japan-3')
+	.mouseover(function(){
+		$('.header-link-japan-3').fadeTo('fast',0.3);
+	})
+	.mouseout(function(){
+		$('.header-link-japan-3').fadeTo('fast',1);
+	});
+
+});
